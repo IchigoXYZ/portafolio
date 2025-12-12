@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useLanguage } from "@/contexts/language-context";
 
 export function Skills() {
-  const skillsRef = useRef (null);
+  const skillsRef = useRef(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -25,7 +27,7 @@ export function Skills() {
 
   const skillCategories = [
     {
-      title: "Frontend",
+      title: t.skills.frontend,
       skills: [
         "React",
         "Next.js",
@@ -35,21 +37,12 @@ export function Skills() {
       ],
     },
     {
-      title: "Backend",
+      title: t.skills.backend,
       skills: ["Node.js", "Express", "PostgreSQL", "Prisma", "REST APIs"],
     },
     {
-      title: "Herramientas",
+      title: t.skills.tools,
       skills: ["Git", "Docker", "Vercel", "Figma", "VS Code"],
-    },
-    {
-      title: "Soft Skills",
-      skills: [
-        "Trabajo en equipo",
-        "Comunicación",
-        "Resolución de problemas",
-        "Adaptabilidad",
-      ],
     },
   ];
 
@@ -64,7 +57,7 @@ export function Skills() {
           <div className="text-center mb-16">
             <div className="animate-on-scroll fade-in-up">
               <p className="text-sm font-medium text-muted-foreground mb-4 tracking-widest uppercase">
-                Habilidades
+                {t.skills.title}
               </p>
             </div>
             <div
@@ -72,12 +65,12 @@ export function Skills() {
               style={{ animationDelay: "0.1s" }}
             >
               <h2 className="font-serif text-4xl lg:text-6xl font-bold text-foreground text-balance">
-                Tecnologías y Expertise
+                {t.skills.title}
               </h2>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             {skillCategories.map((category, index) => (
               <div
                 key={index}

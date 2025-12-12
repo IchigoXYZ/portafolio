@@ -3,9 +3,11 @@
 import { useEffect, useRef } from "react";
 import { Card } from "@/components/ui/card";
 import { Code2, Palette, Rocket } from "lucide-react";
+import { useLanguage } from "@/contexts/language-context";
 
 export function About() {
   const aboutRef = useRef (null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -28,21 +30,18 @@ export function About() {
   const features = [
     {
       icon: Code2,
-      title: "Desarrollo Limpio",
-      description:
-        "Código mantenible, escalable y siguiendo las mejores prácticas de la industria.",
+      title: t.about.passion,
+      description: t.about.passionDesc,
     },
     {
       icon: Palette,
-      title: "Diseño Elegante",
-      description:
-        "Interfaces modernas y atractivas con atención al detalle y experiencia de usuario.",
+      title: t.about.design,
+      description: t.about.designDesc,
     },
     {
       icon: Rocket,
-      title: "Alto Rendimiento",
-      description:
-        "Aplicaciones optimizadas con carga rápida y excelente performance.",
+      title: t.about.innovation,
+      description: t.about.innovationDesc,
     },
   ];
 
@@ -53,7 +52,7 @@ export function About() {
           <div className="text-center mb-16">
             <div className="animate-on-scroll fade-in-up">
               <p className="text-sm font-medium text-muted-foreground mb-4 tracking-widest uppercase">
-                Sobre Mí
+                {t.about.title}
               </p>
             </div>
             <div
@@ -61,7 +60,7 @@ export function About() {
               style={{ animationDelay: "0.1s" }}
             >
               <h2 className="font-serif text-4xl lg:text-6xl font-bold text-foreground mb-6 text-balance">
-                Apasionado por crear soluciones innovadoras
+                {t.about.title}
               </h2>
             </div>
             <div
@@ -69,11 +68,7 @@ export function About() {
               style={{ animationDelay: "0.2s" }}
             >
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Soy un desarrollador full stack con más de 5 años de experiencia
-                creando aplicaciones web modernas. Me especializo en React,
-                Next.js, TypeScript y tecnologías cloud. Mi objetivo es
-                construir productos que combinen diseño elegante con código de
-                calidad.
+                {t.about.description}
               </p>
             </div>
           </div>

@@ -2,9 +2,11 @@
 
 import { useEffect, useRef } from "react";
 import { Briefcase, Calendar } from "lucide-react";
+import { useLanguage } from "@/contexts/language-context";
 
 export function Experience() {
   const experienceRef = useRef (null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -27,40 +29,22 @@ export function Experience() {
 
   const experiences = [
     {
-      role: "Senior Full Stack Developer",
-      company: "Tech Solutions Inc.",
-      period: "2022 - Presente",
-      description:
-        "Liderando el desarrollo de aplicaciones web enterprise con Next.js y TypeScript. Implementación de arquitecturas escalables y mentoría a desarrolladores junior.",
-      achievements: [
-        "Mejoré el rendimiento de la aplicación principal en un 40%",
-        "Implementé sistema de diseño reutilizable",
-        "Lideré la migración a Next.js 14",
-      ],
+      role: t.experience.job1.title,
+      company: t.experience.job1.company,
+      period: t.experience.job1.period,
+      description: t.experience.job1.description,
     },
     {
-      role: "Full Stack Developer",
-      company: "Digital Agency",
-      period: "2020 - 2022",
-      description:
-        "Desarrollo de sitios web y aplicaciones para clientes diversos. Especialización en React, Node.js y bases de datos SQL.",
-      achievements: [
-        "Desarrollé más de 20 proyectos exitosos",
-        "Reduje el tiempo de carga en un 50%",
-        "Implementé CI/CD pipelines",
-      ],
+      role: t.experience.job2.title,
+      company: t.experience.job2.company,
+      period: t.experience.job2.period,
+      description: t.experience.job2.description,
     },
     {
-      role: "Frontend Developer",
-      company: "Startup Innovation",
-      period: "2019 - 2020",
-      description:
-        "Creación de interfaces de usuario modernas y responsivas. Colaboración estrecha con diseñadores y equipo de producto.",
-      achievements: [
-        "Construí componentes reutilizables",
-        "Mejoré la accesibilidad del sitio",
-        "Implementé testing automatizado",
-      ],
+      role: t.experience.job3.title,
+      company: t.experience.job3.company,
+      period: t.experience.job3.period,
+      description: t.experience.job3.description,
     },
   ];
 
@@ -71,7 +55,7 @@ export function Experience() {
           <div className="text-center mb-16">
             <div className="animate-on-scroll fade-in-up">
               <p className="text-sm font-medium text-muted-foreground mb-4 tracking-widest uppercase">
-                Experiencia
+                {t.experience.title}
               </p>
             </div>
             <div
@@ -79,7 +63,7 @@ export function Experience() {
               style={{ animationDelay: "0.1s" }}
             >
               <h2 className="font-serif text-4xl lg:text-6xl font-bold text-foreground text-balance">
-                Trayectoria Profesional
+                {t.experience.title}
               </h2>
             </div>
           </div>
@@ -123,20 +107,9 @@ export function Experience() {
                           <Calendar className="h-4 w-4" />
                           <span>{exp.period}</span>
                         </div>
-                        <p className="text-muted-foreground mb-4 leading-relaxed">
+                        <p className="text-muted-foreground leading-relaxed">
                           {exp.description}
                         </p>
-                        <ul className="space-y-2">
-                          {exp.achievements.map((achievement, i) => (
-                            <li
-                              key={i}
-                              className="flex items-start gap-2 text-sm text-muted-foreground"
-                            >
-                              <span className="text-secondary mt-1">•</span>
-                              <span>{achievement}</span>
-                            </li>
-                          ))}
-                        </ul>
                       </div>
                     </div>
                   </div>

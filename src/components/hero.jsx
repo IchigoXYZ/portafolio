@@ -3,9 +3,11 @@
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { useLanguage } from "@/contexts/language-context";
 
 export function Hero() {
-  const heroRef = useRef (null);
+  const heroRef = useRef(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -40,7 +42,7 @@ export function Hero() {
             style={{ animationDelay: "0.1s" }}
           >
             <p className="text-sm lg:text-base font-medium text-muted-foreground mb-4 tracking-widest uppercase">
-              Desarrollador Full Stack
+              {t.hero.greeting}
             </p>
           </div>
 
@@ -49,8 +51,11 @@ export function Hero() {
             style={{ animationDelay: "0.2s" }}
           >
             <h1 className="font-serif text-5xl sm:text-6xl lg:text-8xl font-bold text-foreground mb-6 text-balance">
-              Creando experiencias digitales excepcionales
+              {t.hero.name}
             </h1>
+            <p className="font-serif text-2xl sm:text-3xl lg:text-4xl font-semibold text-muted-foreground mb-6">
+              {t.hero.title}
+            </p>
           </div>
 
           <div
@@ -58,9 +63,7 @@ export function Hero() {
             style={{ animationDelay: "0.3s" }}
           >
             <p className="text-base lg:text-lg text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-              Especializado en desarrollo web moderno con React, Next.js y
-              tecnologías de vanguardia. Transformo ideas en productos digitales
-              innovadores.
+              {t.hero.description}
             </p>
           </div>
 
@@ -69,7 +72,7 @@ export function Hero() {
             style={{ animationDelay: "0.4s" }}
           >
             <Button size="lg" asChild className="w-full sm:w-auto">
-              <a href="#projects">Ver Proyectos</a>
+              <a href="#projects">{t.hero.cta}</a>
             </Button>
             <Button
               size="lg"
@@ -77,7 +80,7 @@ export function Hero() {
               asChild
               className="w-full sm:w-auto bg-transparent"
             >
-              <a href="#contact">Contactar</a>
+              <a href="#contact">{t.hero.contact}</a>
             </Button>
           </div>
 

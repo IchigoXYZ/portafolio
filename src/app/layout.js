@@ -1,5 +1,7 @@
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/contexts/theme-context";
+import { LanguageProvider } from "@/contexts/language-context";
 
 const _inter = Inter({ subsets: ["latin"] });
 const _playfairDisplay = Playfair_Display({ subsets: ["latin"] });
@@ -31,7 +33,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <body className={`font-sans antialiased`}>{children}</body>
+      <body className={`font-sans antialiased`}>
+        <ThemeProvider>
+          <LanguageProvider>{children}</LanguageProvider>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

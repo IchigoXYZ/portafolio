@@ -4,9 +4,11 @@ import { useEffect, useRef } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
+import { useLanguage } from "@/contexts/language-context";
 
 export function Projects() {
-  const projectsRef = useRef (null);
+  const projectsRef = useRef(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -29,33 +31,30 @@ export function Projects() {
 
   const projects = [
     {
-      title: "Plataforma E-commerce",
-      description:
-        "Tienda online completa con carrito de compras, pagos y gestión de inventario.",
+      title: t.projects.project1.title,
+      description: t.projects.project1.description,
       image: "/modern-ecommerce-platform.jpg",
-      technologies: ["Next.js", "TypeScript", "Stripe", "Supabase"],
+      technologies: t.projects.project1.tech.split(", "),
       links: {
         demo: "#",
         github: "#",
       },
     },
     {
-      title: "Dashboard Analytics",
-      description:
-        "Panel de análisis con gráficos interactivos y visualización de datos en tiempo real.",
-      image: "/analytics-dashboard-dark-theme.png",
-      technologies: ["React", "D3.js", "TailwindCSS", "Node.js"],
+      title: t.projects.project2.title,
+      description: t.projects.project2.description,
+      image: "/analytics-dashboard-dark-theme.jpg",
+      technologies: t.projects.project2.tech.split(", "),
       links: {
         demo: "#",
         github: "#",
       },
     },
     {
-      title: "App de Gestión",
-      description:
-        "Sistema de gestión empresarial con autenticación y roles de usuario.",
-      image: "/business-management-app-interface.jpg",
-      technologies: ["Next.js", "Prisma", "PostgreSQL", "Auth.js"],
+      title: t.projects.project3.title,
+      description: t.projects.project3.description,
+      image: "/task-management-app-interface.jpg",
+      technologies: t.projects.project3.tech.split(", "),
       links: {
         demo: "#",
         github: "#",
@@ -70,7 +69,7 @@ export function Projects() {
           <div className="text-center mb-16">
             <div className="animate-on-scroll fade-in-up">
               <p className="text-sm font-medium text-muted-foreground mb-4 tracking-widest uppercase">
-                Proyectos Destacados
+                {t.projects.title}
               </p>
             </div>
             <div
@@ -78,7 +77,7 @@ export function Projects() {
               style={{ animationDelay: "0.1s" }}
             >
               <h2 className="font-serif text-4xl lg:text-6xl font-bold text-foreground text-balance">
-                Trabajos Recientes
+                {t.projects.title}
               </h2>
             </div>
           </div>
@@ -134,7 +133,7 @@ export function Projects() {
                             rel="noopener noreferrer"
                           >
                             <ExternalLink className="h-4 w-4 mr-2" />
-                            Demo
+                            {t.projects.viewProject}
                           </a>
                         </Button>
                         <Button size="sm" variant="outline" asChild>
@@ -144,7 +143,7 @@ export function Projects() {
                             rel="noopener noreferrer"
                           >
                             <Github className="h-4 w-4 mr-2" />
-                            Código
+                            GitHub
                           </a>
                         </Button>
                       </div>
