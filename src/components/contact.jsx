@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Github, Linkedin, Mail, MapPin } from "lucide-react";
 
 export function Contact() {
-  const contactRef = useRef < HTMLDivElement > null;
+  const contactRef = useRef (null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",

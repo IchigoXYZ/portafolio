@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 
 export function Skills() {
-  const skillsRef = useRef < HTMLDivElement > null;
+  const skillsRef = useRef (null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

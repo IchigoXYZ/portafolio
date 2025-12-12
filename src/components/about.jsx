@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Code2, Palette, Rocket } from "lucide-react";
 
 export function About() {
-  const aboutRef = useRef < HTMLDivElement > null;
+  const aboutRef = useRef (null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

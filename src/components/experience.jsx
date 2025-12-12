@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import { Briefcase, Calendar } from "lucide-react";
 
 export function Experience() {
-  const experienceRef = useRef < HTMLDivElement > null;
+  const experienceRef = useRef (null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

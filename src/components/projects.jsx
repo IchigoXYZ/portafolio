@@ -4,10 +4,9 @@ import { useEffect, useRef } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
-import Image from "next/image";
 
 export function Projects() {
-  const projectsRef = useRef < HTMLDivElement > null;
+  const projectsRef = useRef (null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -104,7 +103,7 @@ export function Projects() {
                         index % 2 === 0 ? "" : "lg:col-start-2"
                       }`}
                     >
-                      <Image
+                      <img
                         src={project.image || "/placeholder.svg"}
                         alt={project.title}
                         className="absolute inset-0 w-full h-full object-cover"

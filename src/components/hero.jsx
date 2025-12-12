@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 
 export function Hero() {
-  const heroRef = useRef < HTMLDivElement > null;
+  const heroRef = useRef (null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
