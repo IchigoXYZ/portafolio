@@ -5,6 +5,8 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
 import { useLanguage } from "@/contexts/language-context";
+import Image from "next/image";
+import Link from "next/link";
 
 export function Projects() {
   const projectsRef = useRef(null);
@@ -33,10 +35,10 @@ export function Projects() {
     {
       title: t.projects.project1.title,
       description: t.projects.project1.description,
-      image: "/modern-ecommerce-platform.jpg",
+      image: "/img/e-comerce.webp",
       technologies: t.projects.project1.tech.split(", "),
       links: {
-        demo: "#",
+        demo: "/andayvemarket.com",
         github: "#",
       },
     },
@@ -53,7 +55,7 @@ export function Projects() {
     {
       title: t.projects.project3.title,
       description: t.projects.project3.description,
-      image: "/task-management-app-interface.jpg",
+      image: "/img/taxis.webp",
       technologies: t.projects.project3.tech.split(", "),
       links: {
         demo: "#",
@@ -102,7 +104,8 @@ export function Projects() {
                         index % 2 === 0 ? "" : "lg:col-start-2"
                       }`}
                     >
-                      <img
+                      <Image
+                        fill
                         src={project.image || "/placeholder.svg"}
                         alt={project.title}
                         className="absolute inset-0 w-full h-full object-cover"
@@ -119,7 +122,7 @@ export function Projects() {
                         {project.technologies.map((tech) => (
                           <span
                             key={tech}
-                            className="px-3 py-1 text-xs font-medium bg-secondary/20 text-secondary rounded-full"
+                            className="px-3 py-1 text-xs font-medium bg-secondary rounded-full"
                           >
                             {tech}
                           </span>
@@ -127,24 +130,24 @@ export function Projects() {
                       </div>
                       <div className="flex gap-4">
                         <Button size="sm" variant="default" asChild>
-                          <a
+                          <Link
                             href={project.links.demo}
                             target="_blank"
                             rel="noopener noreferrer"
                           >
                             <ExternalLink className="h-4 w-4 mr-2" />
                             {t.projects.viewProject}
-                          </a>
+                          </Link>
                         </Button>
                         <Button size="sm" variant="outline" asChild>
-                          <a
+                          <Link
                             href={project.links.github}
                             target="_blank"
                             rel="noopener noreferrer"
                           >
                             <Github className="h-4 w-4 mr-2" />
                             GitHub
-                          </a>
+                          </Link>
                         </Button>
                       </div>
                     </div>

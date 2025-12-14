@@ -91,8 +91,8 @@ export function Experience() {
                     >
                       <div className="bg-card border border-border rounded-lg p-6 lg:p-8 hover:shadow-lg transition-shadow ml-8 md:ml-0">
                         <div className="flex items-center gap-3 mb-4">
-                          <div className="bg-secondary/10 p-2 rounded-lg">
-                            <Briefcase className="h-5 w-5 text-secondary" />
+                          <div className="bg-secondary p-3 rounded-lg">
+                            <Briefcase className="h-5 w-5" />
                           </div>
                           <div>
                             <h3 className="text-xl font-semibold text-foreground">

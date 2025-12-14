@@ -147,8 +147,8 @@ export function Contact() {
             >
               <Card className="p-8 border-border bg-card">
                 <div className="flex items-start gap-4">
-                  <div className="bg-secondary/10 p-3 rounded-lg">
-                    <Mail className="h-6 w-6 text-secondary" />
+                  <div className="bg-secondary p-3 rounded-lg">
+                    <Mail className="h-6 w-6" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-foreground mb-1">
@@ -166,8 +166,8 @@ export function Contact() {
 
               <Card className="p-8 border-border bg-card">
                 <div className="flex items-start gap-4">
-                  <div className="bg-secondary/10 p-3 rounded-lg">
-                    <MapPin className="h-6 w-6 text-secondary" />
+                  <div className="bg-secondary p-3 rounded-lg">
+                    <MapPin className="h-6 w-6" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-foreground mb-1">
@@ -187,7 +187,7 @@ export function Contact() {
                     href="https://github.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-secondary/10 p-3 rounded-lg text-secondary hover:bg-secondary/20 transition-colors"
+                    className="bg-secondary p-3 rounded-lg hover:bg-secondary/20 transition-colors"
                   >
                     <Github className="h-6 w-6" />
                   </a>
@@ -195,13 +195,13 @@ export function Contact() {
                     href="https://linkedin.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-secondary/10 p-3 rounded-lg text-secondary hover:bg-secondary/20 transition-colors"
+                    className="bg-secondary p-3 rounded-lg hover:bg-secondary/20 transition-colors"
                   >
                     <Linkedin className="h-6 w-6" />
                   </a>
                   <a
                     href="mailto:contact@example.com"
-                    className="bg-secondary/10 p-3 rounded-lg text-secondary hover:bg-secondary/20 transition-colors"
+                    className="bg-secondary p-3 rounded-lg hover:bg-secondary/20 transition-colors"
                   >
                     <Mail className="h-6 w-6" />
                   </a>

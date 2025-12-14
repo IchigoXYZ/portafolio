@@ -10,7 +10,7 @@ export const translations = {
     },
     hero: {
       greeting: "Hola, soy",
-      name: "Tu Nombre",
+      name: "Mar Anthony",
       title: "Desarrollador Full Stack & Diseñador Creativo",
       description:
         "Especializado en crear experiencias digitales excepcionales. Combinando código elegante con diseño innovador para construir productos que marcan la diferencia.",
@@ -105,7 +105,7 @@ export const translations = {
     },
     hero: {
       greeting: "Hi, I'm",
-      name: "Your Name",
+      name: "Mar Anthony",
       title: "Full Stack Developer & Creative Designer",
       description:
         "Specialized in creating exceptional digital experiences. Combining elegant code with innovative design to build products that make a difference.",

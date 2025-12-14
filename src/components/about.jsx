@@ -81,8 +81,8 @@ export function About() {
                 style={{ animationDelay: `${0.3 + index * 0.1}s` }}
               >
                 <Card className="p-8 h-full hover:shadow-lg transition-shadow border-border bg-card">
-                  <div className="bg-secondary/10 w-14 h-14 rounded-lg flex items-center justify-center mb-6">
-                    <feature.icon className="h-7 w-7 text-secondary" />
+                  <div className="bg-secondary w-14 h-14 rounded-lg flex items-center justify-center mb-6">
+                    <feature.icon className="h-7 w-7" />
                   </div>
                   <h3 className="text-xl font-semibold text-foreground mb-3">
                     {feature.title}
