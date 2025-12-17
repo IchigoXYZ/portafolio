@@ -45,7 +45,7 @@ export function Projects() {
     {
       title: t.projects.project2.title,
       description: t.projects.project2.description,
-      image: "/analytics-dashboard-dark-theme.jpg",
+      image: "/",
       technologies: t.projects.project2.tech.split(", "),
       links: {
         demo: "#",

@@ -44,7 +44,7 @@ export const translations = {
         tech: "React, D3.js, TailwindCSS, Node.js",
       },
       project3: {
-        title: "App de Gestión de Tareas",
+        title: "App de Reserva de Taxis",
         description:
           "Aplicación colaborativa para gestión de proyectos con características de tiempo real y notificaciones.",
         tech: "Next.js, Supabase, WebSockets",
@@ -139,7 +139,7 @@ export const translations = {
         tech: "React, D3.js, TailwindCSS, Node.js",
       },
       project3: {
-        title: "Task Management App",
+        title: "Taxis Management App",
         description:
           "Collaborative project management application with real-time features and notifications.",
         tech: "Next.js, Supabase, WebSockets",
