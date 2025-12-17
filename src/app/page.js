@@ -6,10 +6,12 @@ import { Experience } from "@/components/experience";
 import { Contact } from "@/components/contact";
 import { Navigation } from "@/components/navigation";
 import CursorTrail from "@/components/CursorTrail";
+import InteractiveParticles from "@/components/InteractiveParticles";
 
 export default function Home() {
   return (
     <main className="relative">
+      <InteractiveParticles />
       <CursorTrail/>
       <Navigation />
       <Hero />
@@ -18,8 +20,6 @@ export default function Home() {
       <Skills />
       <Experience />
       <Contact />
-
-
     </main>
   );
 }
