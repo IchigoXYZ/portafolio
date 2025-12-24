@@ -11,6 +11,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import Link from "next/link";
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,12 +29,12 @@ export function Navigation() {
   }, []);
 
   const menuItems = [
-    { label: t.nav.home, href: "#hero" },
-    { label: t.nav.about, href: "#about" },
-    { label: t.nav.projects, href: "#projects" },
-    { label: t.nav.skills, href: "#skills" },
-    { label: t.nav.experience, href: "#experience" },
-    { label: t.nav.contact, href: "#contact" },
+    { label: t.nav.home, href: "/" },
+    { label: t.nav.about, href: "/about" },
+    { label: t.nav.projects, href: "/projects" },
+    { label: t.nav.skills, href: "/skills" },
+    { label: t.nav.experience, href: "/experience" },
+    { label: t.nav.contact, href: "/contact" },
   ];
 
   return (
@@ -46,12 +47,12 @@ export function Navigation() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          <a
-            href="#hero"
+          <Link
+            href="/"
             className="font-serif text-xl lg:text-2xl font-bold text-foreground"
           >
             Portfolio
-          </a>
+          </Link>
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center gap-8">
@@ -169,14 +170,14 @@ export function Navigation() {
           <div className="lg:hidden py-4 border-t border-border">
             <div className="flex flex-col gap-4">
               {menuItems.map((item) => (
-                <a
+                <Link
                   key={item.href}
                   href={item.href}
                   className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
             </div>
           </div>

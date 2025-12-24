@@ -1,6 +1,7 @@
 import "./globals.css";
 import { ThemeProvider } from "@/contexts/theme-context";
 import { LanguageProvider } from "@/contexts/language-context";
+import { Navigation } from "@/components/navigation";
 
 export const metadata = {
   title: "Mar Portfolio - Desarrollador Full Stack",
@@ -13,7 +14,10 @@ export default function RootLayout({ children }) {
     <html lang="es">
       <body className={`font-sans antialiased`}>
         <ThemeProvider>
-          <LanguageProvider>{children}</LanguageProvider>
+          <LanguageProvider>
+            <Navigation />
+            {children}
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

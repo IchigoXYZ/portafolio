@@ -1,10 +1,4 @@
 import { Hero } from "@/components/hero";
-import { About } from "@/components/about";
-import { Projects } from "@/components/projects";
-import { Skills } from "@/components/skills";
-import { Experience } from "@/components/experience";
-import { Contact } from "@/components/contact";
-import { Navigation } from "@/components/navigation";
 import CursorTrail from "@/components/CursorTrail";
 import InteractiveParticles from "@/components/InteractiveParticles";
 
@@ -13,13 +7,8 @@ export default function Home() {
     <main className="relative">
       <InteractiveParticles />
       <CursorTrail/>
-      <Navigation />
+  
       <Hero />
-      <About />
-      <Projects />
-      <Skills />
-      <Experience />
-      <Contact />
     </main>
   );
 }
