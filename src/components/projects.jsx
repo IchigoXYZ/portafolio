@@ -96,7 +96,7 @@ export function Projects() {
                 <Card className="overflow-hidden border-border bg-card hover:shadow-xl transition-shadow">
                   <div
                     className={`grid grid-cols-1 lg:grid-cols-2 gap-0 ${
-                      index % 2 === 0 ? "" : "lg:grid-flow-dense"
+                      index % 2 === 0 ? "pl-6" : "lg:grid-flow-dense pr-6"
                     }`}
                   >
                     <div
@@ -108,7 +108,7 @@ export function Projects() {
                         fill
                         src={project.image || "/placeholder.svg"}
                         alt={project.title}
-                        className="absolute inset-0 w-full h-full object-cover"
+                        className="absolute inset-0 w-full h-full object-cover rounded-lg"
                       />
                     </div>
                     <div className="p-8 lg:p-12 flex flex-col justify-center">

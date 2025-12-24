@@ -28,6 +28,7 @@ export default function InteractiveParticles() {
     });
 
     // ⚪ Partícula
+    // eslint-disable-next-line react-hooks/unsupported-syntax
     class Particle {
       constructor() {
         this.x = Math.random() * canvas.width;
@@ -121,12 +122,7 @@ export default function InteractiveParticles() {
   return (
     <canvas
       ref={canvasRef}
-      style={{
-        position: "fixed",
-        inset: 0,
-        zIndex: 9998,
-        pointerEvents: "none",
-      }}
+      className="fixed z-50 inset-0 pointer-events-none"
     />
   );
 }
