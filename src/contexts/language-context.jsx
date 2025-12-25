@@ -10,6 +10,7 @@ export function LanguageProvider({ children }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
     const savedLanguage = localStorage.getItem("language");
     if (savedLanguage && (savedLanguage === "es" || savedLanguage === "en")) {
