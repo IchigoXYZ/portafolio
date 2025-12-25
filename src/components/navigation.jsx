@@ -55,14 +55,15 @@ export function Navigation() {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6">
             {menuItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                className="relative text-sm p-1 font-medium text-muted-foreground hover:text-foreground transition-colors group"
               >
                 {item.label}
+                <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-foreground transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
 
@@ -173,10 +174,11 @@ export function Navigation() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                  className="relative text-sm font-medium text-muted-foreground hover:text-foreground transition-colors group"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
+                  <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-foreground transition-all duration-300 group-hover:w-full"></span>
                 </Link>
               ))}
             </div>

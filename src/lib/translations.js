@@ -104,7 +104,7 @@ export const translations = {
       contact: "Contact",
     },
     hero: {
-      greeting: "Hi, I'm",
+      greeting: "Hey, I'm",
       name: "Mar Anthony",
       title: "Full Stack Developer & Creative Designer",
       description:
