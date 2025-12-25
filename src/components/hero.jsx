@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { useLanguage } from "@/contexts/language-context";
+import Link from "next/link";
 
 export function Hero() {
   const heroRef = useRef(null);
@@ -71,7 +72,7 @@ export function Hero() {
             style={{ animationDelay: "0.4s" }}
           >
             <Button size="lg" asChild className="w-full sm:w-auto">
-              <a href="#projects">{t.hero.cta}</a>
+              <Link href="/projects">{t.hero.cta}</Link>
             </Button>
             <Button
               size="lg"
@@ -79,7 +80,7 @@ export function Hero() {
               asChild
               className="w-full sm:w-auto bg-transparent"
             >
-              <a href="#contact">{t.hero.contact}</a>
+              <Link href="/contact">{t.hero.contact}</Link>
             </Button>
           </div>
 
@@ -87,36 +88,36 @@ export function Hero() {
             className="animate-on-scroll fade-in-up mt-16 flex items-center justify-center gap-6"
             style={{ animationDelay: "0.5s" }}
           >
-            <a
+            <Link
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
               <Github className="h-6 w-6" />
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
               <Linkedin className="h-6 w-6" />
-            </a>
-            <a
+            </Link>
+            <Link
               href="mailto:maranthony.work@gmail.com"
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
               <Mail className="h-6 w-6" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <a href="#about">
+        <Link href="#about">
           <ArrowDown className="h-6 w-6 text-muted-foreground" />
-        </a>
+        </Link>
       </div>
     </section>
   );

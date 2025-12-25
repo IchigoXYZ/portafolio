@@ -57,13 +57,13 @@ export function Navigation() {
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center gap-8">
             {menuItems.map((item) => (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
 
             <div className="flex items-center gap-2 ml-4 border-l border-border pl-4">
