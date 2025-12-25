@@ -109,7 +109,7 @@ export const translations = {
       title: "Full Stack Developer & Creative Designer",
       description:
         "Specialized in creating exceptional digital experiences. Combining elegant code with innovative design to build products that make a difference.",
-      cta: "View Projects",
+      cta: "See my Projects",
       contact: "Contact Me",
     },
     about: {

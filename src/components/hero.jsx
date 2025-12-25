@@ -34,7 +34,6 @@ export function Hero() {
       ref={heroRef}
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
     >
-
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <div
@@ -71,16 +70,30 @@ export function Hero() {
             className="animate-on-scroll fade-in-up flex flex-col sm:flex-row items-center justify-center gap-4"
             style={{ animationDelay: "0.4s" }}
           >
-            <Button size="lg" asChild className="w-full sm:w-auto">
-              <Link href="/projects">{t.hero.cta}</Link>
+            <Button
+              size="lg"
+              asChild
+              className="w-full sm:w-auto rounded-full relative overflow-hidden group border-black"
+            >
+              <Link href="/projects">
+                <span className="absolute inset-0 bg-red-800 origin-left transform scale-x-0 rounded-full group-hover:scale-x-100 transition-transform duration-500 ease-in-out z-0"></span>
+                <span className="relative z-10 duration-100 delay-200 group-hover:text-white">
+                  {t.hero.cta}
+                </span>
+              </Link>
             </Button>
             <Button
               size="lg"
               variant="outline"
               asChild
-              className="w-full sm:w-auto bg-transparent"
+              className="w-full sm:w-auto bg-transparent rounded-full relative overflow-hidden group"
             >
-              <Link href="/contact">{t.hero.contact}</Link>
+              <Link href="/contact">
+                <span className="absolute inset-0 bg-red-800 origin-left transform scale-x-0 rounded-full group-hover:scale-x-100 transition-transform duration-500 ease-in-out z-0"></span>
+                <span className="relative z-10 duration-100 delay-200 group-hover:text-white">
+                  {t.hero.contact}
+                </span>
+              </Link>
             </Button>
           </div>
 
