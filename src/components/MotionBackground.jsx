@@ -12,19 +12,25 @@ const MotionBackground = () => {
     },
     backgroundRow: {
       position: "absolute",
-      width: "200%",
-      height: "50%",
+      width: "100%",
+      height: "30%",
       display: "flex",
       alignItems: "center",
       whiteSpace: "nowrap",
     },
     topRow: {
       top: 0,
-      animation: "scrollLeft 25s linear infinite",
     },
     bottomRow: {
       bottom: 0,
-      animation: "scrollRight 25s linear infinite",
+    },
+    textContainer: {
+      display: "flex",
+      animation: "scrollLeft 200s linear infinite",
+    },
+    textContainerReverse: {
+      display: "flex",
+      animation: "scrollRight 200s linear infinite",
     },
     text: {
       fontSize: "120px",
@@ -33,6 +39,7 @@ const MotionBackground = () => {
       marginRight: "80px",
       textTransform: "uppercase",
       letterSpacing: "4px",
+      flexShrink: 0,
     },
     keyframes: `
       @keyframes scrollLeft {
@@ -47,11 +54,20 @@ const MotionBackground = () => {
   };
 
   // Crear elementos de texto repetido
-  const repeatedTexts = Array.from({ length: 6 }, (_, i) => (
-    <div key={i} style={styles.text}>
-      FULL STACK UI/UX Designer DevOps
-    </div>
-  ));
+  const createTextElements = () => {
+    const texts = Array.from({ length: 6 }, (_, i) => (
+      <div key={`text-${i}`} style={styles.text}>
+        FULL STACK UI/UX Designer DevOps
+      </div>
+    ));
+
+    return (
+      <>
+        {texts}
+        {texts}
+      </>
+    );
+  };
 
   return (
     <div style={styles.container}>
@@ -60,12 +76,12 @@ const MotionBackground = () => {
 
       {/* Fila superior - se mueve hacia la izquierda */}
       <div style={{ ...styles.backgroundRow, ...styles.topRow }}>
-        {repeatedTexts}
+        <div style={styles.textContainer}>{createTextElements()}</div>
       </div>
 
       {/* Fila inferior - se mueve hacia la derecha */}
       <div style={{ ...styles.backgroundRow, ...styles.bottomRow }}>
-        {repeatedTexts}
+        <div style={styles.textContainerReverse}>{createTextElements()}</div>
       </div>
     </div>
   );

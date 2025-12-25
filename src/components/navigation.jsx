@@ -63,7 +63,7 @@ export function Navigation() {
                 className="relative text-sm p-1 font-medium text-muted-foreground hover:text-foreground transition-colors group"
               >
                 {item.label}
-                <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-foreground transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-red-700 transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
 
