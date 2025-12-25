@@ -97,32 +97,103 @@ export function Hero() {
             </Button>
           </div>
 
-          <div
-            className="animate-on-scroll fade-in-up mt-16 flex items-center justify-center gap-6"
-            style={{ animationDelay: "0.5s" }}
-          >
-            <Link
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <Github className="h-6 w-6" />
-            </Link>
-            <Link
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <Linkedin className="h-6 w-6" />
-            </Link>
-            <Link
-              href="mailto:maranthony.work@gmail.com"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <Mail className="h-6 w-6" />
-            </Link>
+          <div className="animate-on-scroll fade-in-up mt-16 flex items-center justify-center gap-6">
+            {/* GitHub */}
+            <div className="relative group">
+              {/* Tooltip */}
+              <div
+                className="absolute -top-11 left-1/2 transform -translate-x-1/2 px-3 py-1.5 rounded-lg bg-gray-700 text-gray-100 text-sm font-medium whitespace-nowrap 
+                            opacity-0 group-hover:opacity-100 
+                            translate-y-2 group-hover:translate-y-0 
+                            scale-95 group-hover:scale-100 
+                            transition-all duration-200 ease-out 
+                            pointer-events-none z-50 shadow-lg"
+              >
+                GitHub
+                {/* Flecha del tooltip */}
+                <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-700 rotate-45" />
+              </div>
+
+              {/* Icono con fondo circular */}
+              <Link
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative p-3 inline-flex items-center justify-center group/icon"
+              >
+                {/* Fondo circular */}
+                <div className="absolute w-14 h-14 rounded-full bg-gray-500 opacity-0 group-hover/icon:opacity-60 transition-opacity duration-300 scale-0 group-hover/icon:scale-100" />
+
+                {/* Icono */}
+                <div className="relative z-10 text-muted-foreground group-hover/icon:text-foreground transition-colors duration-300">
+                  <Github className="h-6 w-6" />
+                </div>
+              </Link>
+            </div>
+
+            {/* LinkedIn */}
+            <div className="relative group">
+              {/* Tooltip */}
+              <div
+                className="absolute -top-11 left-1/2 transform -translate-x-1/2 px-3 py-1.5 rounded-lg bg-blue-700 text-blue-100 text-sm font-medium whitespace-nowrap 
+                            opacity-0 group-hover:opacity-100 
+                            translate-y-2 group-hover:translate-y-0 
+                            scale-95 group-hover:scale-100 
+                            transition-all duration-200 ease-out 
+                            pointer-events-none z-50 shadow-lg"
+              >
+                LinkedIn
+                {/* Flecha del tooltip */}
+                <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-blue-700 rotate-45" />
+              </div>
+
+              {/* Icono con fondo circular */}
+              <Link
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative p-3 inline-flex items-center justify-center group/icon"
+              >
+                {/* Fondo circular */}
+                <div className="absolute w-14 h-14 rounded-full bg-blue-700 opacity-0 group-hover/icon:opacity-60 transition-opacity duration-300 scale-0 group-hover/icon:scale-100" />
+
+                {/* Icono */}
+                <div className="relative z-10 text-muted-foreground group-hover/icon:text-foreground transition-colors duration-300">
+                  <Linkedin className="h-6 w-6" />
+                </div>
+              </Link>
+            </div>
+
+            {/* Email */}
+            <div className="relative group">
+              {/* Tooltip */}
+              <div
+                className="absolute -top-11 left-1/2 transform -translate-x-1/2 px-3 py-1.5 rounded-lg bg-red-700 text-red-100 text-sm font-medium whitespace-nowrap 
+                            opacity-0 group-hover:opacity-100 
+                            translate-y-2 group-hover:translate-y-0 
+                            scale-95 group-hover:scale-100 
+                            transition-all duration-200 ease-out 
+                            pointer-events-none z-50 shadow-lg"
+              >
+                Email
+                {/* Flecha del tooltip */}
+                <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-red-700 rotate-45" />
+              </div>
+
+              {/* Icono con fondo circular */}
+              <Link
+                href="mailto:maranthony.work@gmail.com"
+                className="relative p-3 inline-flex items-center justify-center group/icon"
+              >
+                {/* Fondo circular */}
+                <div className="absolute w-14 h-14 rounded-full bg-red-600 opacity-0 group-hover/icon:opacity-60 transition-opacity duration-300 scale-0 group-hover/icon:scale-100" />
+
+                {/* Icono */}
+                <div className="relative z-10 text-muted-foreground group-hover/icon:text-foreground transition-colors duration-300">
+                  <Mail className="h-6 w-6" />
+                </div>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
