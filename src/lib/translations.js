@@ -20,7 +20,7 @@ export const translations = {
     about: {
       title: "Sobre Mí",
       description:
-        "Soy un desarrollador apasionado con más de 5 años de experiencia en la creación de aplicaciones web modernas. Me especializo en tecnologías de JavaScript y tengo un profundo conocimiento de arquitecturas escalables.",
+        "Soy desarrollador web con más de cinco años de experiencia creando aplicaciones modernas, eficientes y escalables. Me especializo en tecnologías JavaScript y CSS, con un sólido dominio de arquitecturas pensadas para crecer, mantener rendimiento y ofrecer una excelente experiencia de usuario.",
       passion: "Pasión por el Código",
       passionDesc: "Escribiendo código limpio y mantenible",
       design: "Enfoque en Diseño",
@@ -115,7 +115,7 @@ export const translations = {
     about: {
       title: "About Me",
       description:
-        "I'm a passionate developer with over 5 years of experience building modern web applications. I specialize in JavaScript technologies and have deep knowledge of scalable architectures.",
+        "I am a web developer with over five years of experience building modern, efficient, and scalable web applications. I specialize in JavaScript and CSS technologies, with a strong understanding of scalable architectures focused on performance and user experience.",
       passion: "Code Passion",
       passionDesc: "Writing clean and maintainable code",
       design: "Design Focus",
