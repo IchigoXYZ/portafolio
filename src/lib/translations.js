@@ -113,7 +113,7 @@ export const translations = {
       contact: "Contact Me",
     },
     about: {
-      title: "About Me",
+      title: "About",
       description:
         "I am a web developer with over five years of experience building modern, efficient, and scalable web applications. I specialize in JavaScript and CSS technologies, with a strong understanding of scalable architectures focused on performance and user experience.",
       passion: "Code Passion",
