@@ -7,54 +7,54 @@ import { Button } from "@/components/ui/button";
 import { Github, ExternalLink, ArrowRight } from "lucide-react";
 import InteractiveParticles from "@/components/InteractiveParticles";
 
-// Datos de Ejemplo (Idealmente esto vendría de un archivo data/projects.js)
+// Datos actualizados con los proyectos reales
 const ALL_PROJECTS = [
   {
     id: 1,
-    title: "E-Commerce Brutalist",
+    title: "E-Commerce Andayve",
     category: "Full Stack",
     description:
-      "Plataforma de comercio con diseño experimental y arquitectura headless usando Shopify y Next.js.",
-    image: "/project1.jpg", // Asegúrate de tener imágenes en public/
-    tech: ["Next.js", "Shopify API", "Tailwind", "Zustand"],
+      "Plataforma de comercio con diseño experimental y arquitectura headless usando Django y Next.js.",
+    image: "/img/e-comerce.webp",
+    tech: ["Next.js", "Django", "Tailwind", "Zustand", "Stripe"],
     github: "https://github.com",
-    demo: "https://demo.com",
+    demo: "https://andayvemarket.com",
     featured: true,
   },
   {
     id: 2,
-    title: "AI Dashboard Analytics",
-    category: "Dashboard",
+    title: "Taxi Solers Cuba",
+    category: "Full Stack",
     description:
-      "Panel de control SaaS para visualización de datos en tiempo real impulsado por IA.",
-    image: "/project2.jpg",
-    tech: ["React", "Python", "D3.js", "Firebase"],
+      "Sitio web para reservas de taxis y excursiones en Cuba con sistema de preferencias personalizadas.",
+    image: "/img/taxi-solers.webp", // Asegúrate de tener esta imagen en public/img/
+    tech: ["React", "Node.js", "MongoDB", "Express", "Tailwind"],
     github: "https://github.com",
-    demo: "https://demo.com",
-    featured: false,
+    demo: "https://taxis-solers.com",
+    featured: true,
   },
   {
     id: 3,
-    title: "Neon Portfolio 2023",
-    category: "Design",
+    title: "Cursos de Negocios Plus",
+    category: "Full Stack",
     description:
-      "Sitio web inmersivo premiado con animaciones WebGL fluidas y Three.js.",
-    image: "/project3.jpg",
-    tech: ["Three.js", "GSAP", "WebGL", "Blender"],
+      "Plataforma de venta de cursos con sistema de membresía plus, registro de usuarios y compras en línea.",
+    image: "/img/cursos-negocios.webp", // Asegúrate de tener esta imagen en public/img/
+    tech: ["Next.js", "TypeScript", "Stripe", "Prisma", "PostgreSQL"],
     github: "https://github.com",
-    demo: "https://demo.com",
+    demo: "https://cursosnegociosplus.com",
     featured: false,
   },
   {
     id: 4,
-    title: "Task Master Pro",
+    title: "Catálogo Audiovisual",
     category: "Full Stack",
     description:
-      "Aplicación de gestión de tareas colaborativa con updates en tiempo real vía WebSockets.",
-    image: "/project4.jpg",
-    tech: ["Vue.js", "Node.js", "Socket.io", "PostgreSQL"],
+      "Catálogo web de series y películas estilo Netflix para empresa que vende contenido audiovisual físico.",
+    image: "/img/catalogo-audiovisual.webp", // Asegúrate de tener esta imagen en public/img/
+    tech: ["React", "Firebase", "TMDB API", "Material-UI", "Redux"],
     github: "https://github.com",
-    demo: "https://demo.com",
+    demo: "https://catalogoaudiovisual.com",
     featured: false,
   },
 ];
@@ -176,13 +176,12 @@ export function Projects() {
                   </div>
 
                   {/* Usa esto cuando tengas imágenes reales */}
-                  {/* <Image 
-                    src={project.image} 
+                  <Image
+                    src={project.image}
                     alt={project.title}
                     fill
                     className="object-cover"
-                  /> 
-                  */}
+                  />
                 </div>
 
                 {/* Botones flotantes (aparecen en hover en desktop, siempre visibles en mobile) */}
