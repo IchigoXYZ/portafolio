@@ -2,6 +2,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/contexts/theme-context";
 import { LanguageProvider } from "@/contexts/language-context";
 import { Navigation } from "@/components/navigation";
+import TransitionProvider from "@/components/provider/TransitionProvider";
 
 export const metadata = {
   title: "Mar Portfolio - Desarrollador Full Stack",
@@ -15,8 +16,10 @@ export default function RootLayout({ children }) {
       <body className={`font-sans antialiased`}>
         <ThemeProvider>
           <LanguageProvider>
-            <Navigation />
-            {children}
+            <TransitionProvider>
+              <Navigation />
+              {children}
+            </TransitionProvider>
           </LanguageProvider>
         </ThemeProvider>
       </body>
