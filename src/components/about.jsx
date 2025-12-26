@@ -6,38 +6,30 @@ import { Code2, Palette, Rocket } from "lucide-react";
 import { useLanguage } from "@/contexts/language-context";
 
 export function About() {
-  const aboutRef = useRef (null);
+  const sectionRef = useRef(null);
   const { t } = useLanguage();
 
   useEffect(() => {
+    const items = sectionRef.current?.querySelectorAll(".reveal");
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
+            entry.target.classList.add("reveal-visible");
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.15 }
     );
 
-    const elements = aboutRef.current?.querySelectorAll(".animate-on-scroll");
-    elements?.forEach((el) => observer.observe(el));
-
+    items?.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
-  });
+  }, []);
 
   const features = [
-    {
-      icon: Code2,
-      title: t.about.passion,
-      description: t.about.passionDesc,
-    },
-    {
-      icon: Palette,
-      title: t.about.design,
-      description: t.about.designDesc,
-    },
+    { icon: Code2, title: t.about.passion, description: t.about.passionDesc },
+    { icon: Palette, title: t.about.design, description: t.about.designDesc },
     {
       icon: Rocket,
       title: t.about.innovation,
@@ -46,56 +38,79 @@ export function About() {
   ];
 
   return (
-    <section id="about" ref={aboutRef} className="py-20 lg:py-32 bg-accent/20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="animate-on-scroll fade-in-up">
-              <p className="text-sm font-medium text-muted-foreground mb-4 tracking-widest uppercase">
-                {t.about.title}
-              </p>
-            </div>
-            <div
-              className="animate-on-scroll fade-in-up"
-              style={{ animationDelay: "0.1s" }}
-            >
-              <h2 className="font-serif text-4xl lg:text-6xl font-bold text-foreground mb-6 text-balance">
-                {t.about.title}
-              </h2>
-            </div>
-            <div
-              className="animate-on-scroll fade-in-up"
-              style={{ animationDelay: "0.2s" }}
-            >
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                {t.about.description}
-              </p>
-            </div>
-          </div>
+    <section
+      ref={sectionRef}
+      id="about"
+      className="relative py-24 lg:py-36 bg-accent/20 overflow-hidden"
+    >
+      {/* BACKGROUND BLOBS */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -top-40 -left-40 w-[28rem] h-[28rem] bg-primary/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-[32rem] h-[32rem] bg-secondary/20 rounded-full blur-3xl" />
+      </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-            {features.map((feature, index) => (
-              <div
-                key={index}
-                className="animate-on-scroll scale-in"
-                style={{ animationDelay: `${0.3 + index * 0.1}s` }}
+      <div className="relative max-w-6xl mx-auto px-6">
+        {/* HEADER */}
+        <div className="text-center mb-20 space-y-6">
+          <h2 className="reveal font-serif text-4xl lg:text-6xl font-bold text-foreground">
+            {t.about.title}
+          </h2>
+
+          <p className="reveal max-w-3xl mx-auto text-lg text-muted-foreground leading-relaxed">
+            {t.about.description}
+          </p>
+        </div>
+
+        {/* CARDS */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {features.map((feature, i) => (
+            <div
+              key={i}
+              className="reveal"
+              style={{ transitionDelay: `${i * 120}ms` }}
+            >
+              <Card
+                className="
+                  h-full p-10 rounded-2xl
+                  bg-card/80 backdrop-blur-xl
+                  border border-border/60
+                  transition-all duration-500
+                  hover:-translate-y-2
+                  hover:shadow-2xl
+                "
               >
-                <Card className="p-8 h-full hover:shadow-lg transition-shadow border-border bg-card">
-                  <div className="bg-secondary w-14 h-14 rounded-lg flex items-center justify-center mb-6">
-                    <feature.icon className="h-7 w-7" />
+                <div className="space-y-5">
+                  <div className="w-14 h-14 rounded-xl bg-secondary/80 flex items-center justify-center">
+                    <feature.icon className="w-7 h-7 text-foreground" />
                   </div>
-                  <h3 className="text-xl font-semibold text-foreground mb-3">
+
+                  <h3 className="text-xl font-semibold text-foreground">
                     {feature.title}
                   </h3>
+
                   <p className="text-muted-foreground leading-relaxed">
                     {feature.description}
                   </p>
-                </Card>
-              </div>
-            ))}
-          </div>
+                </div>
+              </Card>
+            </div>
+          ))}
         </div>
       </div>
+
+      {/* ANIMATIONS */}
+      <style jsx>{`
+        .reveal {
+          opacity: 0;
+          transform: translateY(40px) scale(0.97);
+          transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal-visible {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      `}</style>
     </section>
   );
 }
