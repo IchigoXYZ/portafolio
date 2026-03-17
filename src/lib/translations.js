@@ -70,25 +70,18 @@ export const translations = {
       },
     },
     projects: {
-      title: "Proyectos Destacados",
-      viewProject: "Ver Proyecto",
-      project1: {
-        title: "Plataforma E-Commerce",
-        description:
-          "Plataforma completa de comercio electrónico con carrito de compras, pagos integrados y panel de administración.",
-        tech: "Next.js, TypeScript, Stripe, Supabase",
+      title: {
+        prefix: "Selected",
+        suffix: "Works",
       },
-      project2: {
-        title: "Dashboard Analytics",
-        description:
-          "Dashboard en tiempo real para visualización de datos con gráficos interactivos y reportes personalizados.",
-        tech: "React, D3.js, TailwindCSS, Node.js",
+      subtitle:
+        "Una colección curada de proyectos donde la lógica se encuentra con la creatividad.",
+      buttons: {
+        viewDemo: "Ver Demo",
       },
-      project3: {
-        title: "App de Reserva de Taxis",
-        description:
-          "Aplicación colaborativa para gestión de proyectos con características de tiempo real y notificaciones.",
-        tech: "Next.js, Supabase, WebSockets",
+      cta: {
+        question: "¿Tienes un proyecto en mente?",
+        button: "Contáctame ahora",
       },
     },
     skills: {
@@ -206,56 +199,18 @@ export const translations = {
       },
     },
     projects: {
-      title: "Featured Projects",
-      viewProject: "View Project",
-      project1: {
-        title: "E-Commerce Platform",
-        description:
-          "Complete e-commerce platform with shopping cart, integrated payments, and admin dashboard.",
-        tech: "Next.js, TypeScript, Stripe, Supabase",
+      title: {
+        prefix: "Selected",
+        suffix: "Works",
       },
-      project2: {
-        title: "Analytics Dashboard",
-        description:
-          "Real-time dashboard for data visualization with interactive charts and custom reports.",
-        tech: "React, D3.js, TailwindCSS, Node.js",
+      subtitle:
+        "A curated collection of projects where logic meets creativity.",
+      buttons: {
+        viewDemo: "View Demo",
       },
-      project3: {
-        title: "Taxis Management App",
-        description:
-          "Collaborative project management application with real-time features and notifications.",
-        tech: "Next.js, Supabase, WebSockets",
-      },
-    },
-    skills: {
-      title: "Technical Skills",
-      frontend: "Frontend",
-      backend: "Backend",
-      tools: "Tools",
-    },
-    experience: {
-      title: "Experience",
-      present: "Present",
-      job1: {
-        title: "Senior Full Stack Developer",
-        company: "Tech Company Inc.",
-        period: "2021 - Present",
-        description:
-          "Leading development of scalable web applications with Next.js and Node.js. Implementation of serverless architectures and performance optimization.",
-      },
-      job2: {
-        title: "Full Stack Developer",
-        company: "Digital Startup",
-        period: "2019 - 2021",
-        description:
-          "Building products from scratch using React and Node.js. Collaboration in agile teams and mentoring junior developers.",
-      },
-      job3: {
-        title: "Frontend Developer",
-        company: "Creative Agency",
-        period: "2017 - 2019",
-        description:
-          "Creating attractive and responsive user interfaces. Working with designers to implement exceptional visual experiences.",
+      cta: {
+        question: "Have a project in mind?",
+        button: "Contact me now",
       },
     },
     contact: {

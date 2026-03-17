@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, ArrowRight } from "lucide-react";
 import InteractiveParticles from "@/components/InteractiveParticles";
+import { useLanguage } from "@/contexts/language-context";
 
 // Datos actualizados con los proyectos reales
 const ALL_PROJECTS = [
@@ -56,8 +57,9 @@ const ALL_PROJECTS = [
 ];
 
 export function Projects() {
-  const [filteredProjects, setFilteredProjects] = useState(ALL_PROJECTS);
+  const [filteredProjects] = useState(ALL_PROJECTS);
   const containerRef = useRef(null);
+  const { t } = useLanguage();
 
   // Lógica de Observer (Igual que en About y Hero)
   const handleScrollAnimation = () => {
@@ -99,7 +101,10 @@ export function Projects() {
             style={{ animationDelay: "0.1s" }}
           >
             <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-bold text-foreground mb-6">
-              Selected <span className="text-red-800 italic">Works</span>
+              {t.projects?.title?.prefix || "Selected"}{" "}
+              <span className="text-red-800 italic">
+                {t.projects?.title?.suffix || "Works"}
+              </span>
             </h1>
           </div>
           <div
@@ -107,8 +112,8 @@ export function Projects() {
             style={{ animationDelay: "0.2s" }}
           >
             <p className="text-xl text-muted-foreground max-w-2xl">
-              Una colección curada de proyectos donde la lógica se encuentra con
-              la creatividad.
+              {t.projects?.subtitle ||
+                "Una colección curada de proyectos donde la lógica se encuentra con la creatividad."}
             </p>
           </div>
         </div>
@@ -119,7 +124,7 @@ export function Projects() {
             <div
               key={project.id}
               className="animate-on-scroll fade-in-up group relative flex flex-col"
-              style={{ animationDelay: `${0.1 + (index % 2) * 0.1}s` }} // Stagger effect
+              style={{ animationDelay: `${0.1 + (index % 2) * 0.1}s` }}
             >
               {/* CARD IMAGE CONTAINER */}
               <div className="relative aspect-16/10 w-full overflow-hidden rounded-lg bg-muted border border-border/50 shadow-lg">
@@ -133,7 +138,7 @@ export function Projects() {
                     {index + 1}
                   </div>
 
-                  {/* Usa esto cuando tengas imágenes reales */}
+                  {/* Imagen real */}
                   <Image
                     src={project.image}
                     alt={project.title}
@@ -142,13 +147,13 @@ export function Projects() {
                   />
                 </div>
 
-                {/* Botones flotantes (aparecen en hover en desktop, siempre visibles en mobile) */}
+                {/* Botones flotantes */}
                 <div className="absolute bottom-6 right-6 z-20 flex gap-3 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 ease-out">
                   <Link
                     href={project.demo}
                     target="_blank"
                     className="p-3 bg-background/90 backdrop-blur-sm rounded-full text-foreground hover:bg-red-700 hover:text-white transition-colors border border-border"
-                    title="Ver Demo"
+                    title={t.projects?.buttons?.viewDemo || "Ver Demo"}
                   >
                     <ExternalLink className="w-5 h-5" />
                   </Link>
@@ -189,7 +194,7 @@ export function Projects() {
         {/* CTA BOTTOM */}
         <div className="mt-32 border-t border-border pt-16 flex flex-col items-center text-center">
           <h2 className="animate-on-scroll fade-in-up text-3xl font-bold mb-6">
-            ¿Tienes un proyecto en mente?
+            {t.projects?.cta?.question || "¿Tienes un proyecto en mente?"}
           </h2>
           <div
             className="animate-on-scroll fade-in-up"
@@ -197,7 +202,7 @@ export function Projects() {
           >
             <Button size="lg" className="rounded-full gap-2 group" asChild>
               <Link href="/contact">
-                Contáctame ahora{" "}
+                {t.projects?.cta?.button || "Contáctame ahora"}{" "}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
