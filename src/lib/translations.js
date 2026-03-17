@@ -18,15 +18,56 @@ export const translations = {
       contact: "Contáctame",
     },
     about: {
-      title: "Sobre Mí",
-      description:
-        "Soy desarrollador web con más de cinco años de experiencia creando aplicaciones modernas, eficientes y escalables. Me especializo en tecnologías JavaScript y CSS, con un sólido dominio de arquitecturas pensadas para crecer, mantener rendimiento y ofrecer una excelente experiencia de usuario.",
-      passion: "Pasión por el Código",
-      passionDesc: "Escribiendo código limpio y mantenible",
-      design: "Enfoque en Diseño",
-      designDesc: "Creando interfaces hermosas e intuitivas",
-      innovation: "Innovación Constante",
-      innovationDesc: "Siempre aprendiendo nuevas tecnologías",
+      title: {
+        prefix: "Sobre",
+        suffix: "Mí.",
+      },
+      intro: {
+        line1: "Soy un desarrollador apasionado por la intersección entre el",
+        design: "diseño",
+        and: "y la",
+        engineering: "ingeniería",
+        line2: ".",
+      },
+      description: {
+        p1: "Con base en el mundo digital, creo experiencias web que no solo funcionan, sino que se sienten vivas. Mi enfoque combina la precisión técnica con una sensibilidad artística única.",
+        p2: "A diferencia de los desarrolladores tradicionales, no solo escribo código; esculpo interacciones. Me inspiro en el brutalismo minimalista y el movimiento cinético para crear interfaces que dejan huella.",
+      },
+      cv: {
+        download: "Descargar CV",
+        url: "/resume.pdf",
+      },
+      image: {
+        alt: "Mar Perfil",
+      },
+      services: {
+        fullstack: {
+          title: "Full Stack Dev",
+          desc: "Arquitectura escalable desde el frontend hasta el backend usando Next.js y Django.",
+        },
+        uiux: {
+          title: "UI/UX Design",
+          desc: "Interfaces inmersivas que priorizan la experiencia de usuario y la estética.",
+        },
+        devops: {
+          title: "DevOps & Cloud",
+          desc: "CI/CD pipelines, despliegues en AWS/Vercel y optimización de rendimiento.",
+        },
+        creative: {
+          title: "Creative Coding",
+          desc: "Animaciones WebGL y experiencias interactivas que rompen lo convencional.",
+        },
+      },
+      philosophy: {
+        label: "Mi Filosofía",
+        line1: "El código es poesía lógica.",
+        line2: "Creo sistemas complejos",
+        line3: "que se sienten simples.",
+      },
+      cta: {
+        question: "¿Listo para crear algo increíble?",
+        button: "Iniciar Proyecto",
+      },
     },
     projects: {
       title: "Proyectos Destacados",
@@ -113,15 +154,56 @@ export const translations = {
       contact: "Contact Me",
     },
     about: {
-      title: "About",
-      description:
-        "I am a web developer with over five years of experience building modern, efficient, and scalable web applications. I specialize in JavaScript and CSS technologies, with a strong understanding of scalable architectures focused on performance and user experience.",
-      passion: "Code Passion",
-      passionDesc: "Writing clean and maintainable code",
-      design: "Design Focus",
-      designDesc: "Creating beautiful and intuitive interfaces",
-      innovation: "Constant Innovation",
-      innovationDesc: "Always learning new technologies",
+      title: {
+        prefix: "About",
+        suffix: "Me.",
+      },
+      intro: {
+        line1: "I'm a developer passionate about the intersection between",
+        design: "design",
+        and: "and",
+        engineering: "engineering",
+        line2: ".",
+      },
+      description: {
+        p1: "Based in the digital world, I create web experiences that not only work but feel alive. My approach combines technical precision with unique artistic sensitivity.",
+        p2: "Unlike traditional developers, I don't just write code; I sculpt interactions. I draw inspiration from minimalist brutalism and kinetic movement to create interfaces that leave a mark.",
+      },
+      cv: {
+        download: "Download CV",
+        url: "/resume.pdf",
+      },
+      image: {
+        alt: "Mar Profile",
+      },
+      services: {
+        fullstack: {
+          title: "Full Stack Dev",
+          desc: "Scalable architecture from frontend to backend using Next.js and Django.",
+        },
+        uiux: {
+          title: "UI/UX Design",
+          desc: "Immersive interfaces that prioritize user experience and aesthetics.",
+        },
+        devops: {
+          title: "DevOps & Cloud",
+          desc: "CI/CD pipelines, AWS/Vercel deployments and performance optimization.",
+        },
+        creative: {
+          title: "Creative Coding",
+          desc: "WebGL animations and interactive experiences that break the conventional.",
+        },
+      },
+      philosophy: {
+        label: "My Philosophy",
+        line1: "Code is logical poetry.",
+        line2: "I create complex systems",
+        line3: "that feel simple.",
+      },
+      cta: {
+        question: "Ready to create something amazing?",
+        button: "Start Project",
+      },
     },
     projects: {
       title: "Featured Projects",

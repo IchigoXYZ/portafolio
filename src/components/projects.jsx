@@ -122,9 +122,9 @@ export function Projects() {
               style={{ animationDelay: `${0.1 + (index % 2) * 0.1}s` }} // Stagger effect
             >
               {/* CARD IMAGE CONTAINER */}
-              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-lg bg-muted border border-border/50 shadow-lg">
+              <div className="relative aspect-16/10 w-full overflow-hidden rounded-lg bg-muted border border-border/50 shadow-lg">
                 {/* Overlay gradiente al hacer hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 transition-opacity duration-300 z-10" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent opacity-60 transition-opacity duration-300 z-10" />
 
                 {/* Imagen con efecto Zoom */}
                 <div className="relative h-full w-full transform transition-transform duration-700 ease-out group-hover:scale-105">

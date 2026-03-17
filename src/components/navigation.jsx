@@ -40,7 +40,7 @@ export function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
           ? "bg-background/70 backdrop-blur-xl border-b border-white/5 py-3"
           : "bg-transparent py-5"
@@ -54,9 +54,9 @@ export function Navigation() {
             className="group flex items-center gap-2 font-serif text-xl lg:text-2xl font-bold text-foreground tracking-tighter"
           >
             <span className="text-red-800 transition-transform group-hover:-rotate-12">
-              M
+              Mar
             </span>
-            <span className="hidden sm:inline-block">Portfolio</span>
+            <span>Portfolio</span>
           </Link>
 
           {/* DESKTOP MENU */}

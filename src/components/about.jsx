@@ -10,7 +10,7 @@ import { useLanguage } from "@/contexts/language-context";
 
 export function About() {
   const containerRef = useRef(null);
-  const { t } = useLanguage(); // Asumiendo que tienes traducciones, si no, usa texto directo
+  const { t } = useLanguage();
 
   // Lógica de Observer para animaciones al hacer scroll
   useEffect(() => {
@@ -32,27 +32,34 @@ export function About() {
     return () => observer.disconnect();
   }, []);
 
-  // Datos de servicios (puedes moverlos a un archivo de datos)
   const services = [
     {
       icon: <Code2 className="w-6 h-6" />,
-      title: "Full Stack Dev",
-      desc: "Arquitectura escalable desde el frontend hasta el backend usando Next.js y Django.",
+      title: t.about?.services?.fullstack?.title || "Full Stack Dev",
+      desc:
+        t.about?.services?.fullstack?.desc ||
+        "Arquitectura escalable desde el frontend hasta el backend usando Next.js y Django.",
     },
     {
       icon: <Palette className="w-6 h-6" />,
-      title: "UI/UX Design",
-      desc: "Interfaces inmersivas que priorizan la experiencia de usuario y la estética.",
+      title: t.about?.services?.uiux?.title || "UI/UX Design",
+      desc:
+        t.about?.services?.uiux?.desc ||
+        "Interfaces inmersivas que priorizan la experiencia de usuario y la estética.",
     },
     {
       icon: <Terminal className="w-6 h-6" />,
-      title: "DevOps & Cloud",
-      desc: "CI/CD pipelines, despliegues en AWS/Vercel y optimización de rendimiento.",
+      title: t.about?.services?.devops?.title || "DevOps & Cloud",
+      desc:
+        t.about?.services?.devops?.desc ||
+        "CI/CD pipelines, despliegues en AWS/Vercel y optimización de rendimiento.",
     },
     {
       icon: <Zap className="w-6 h-6" />,
-      title: "Creative Coding",
-      desc: "Animaciones WebGL y experiencias interactivas que rompen lo convencional.",
+      title: t.about?.services?.creative?.title || "Creative Coding",
+      desc:
+        t.about?.services?.creative?.desc ||
+        "Animaciones WebGL y experiencias interactivas que rompen lo convencional.",
     },
   ];
 
@@ -74,7 +81,10 @@ export function About() {
             style={{ animationDelay: "0.1s" }}
           >
             <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl font-bold text-foreground mb-8 tracking-tight">
-              About <span className="text-muted-foreground/30 italic">Me.</span>
+              {t.about?.title?.prefix || "Sobre"}{" "}
+              <span className="text-muted-foreground/30 italic">
+                {t.about?.title?.suffix || "Mí."}
+              </span>
             </h1>
           </div>
 
@@ -86,13 +96,16 @@ export function About() {
                 style={{ animationDelay: "0.2s" }}
               >
                 <h2 className="text-2xl md:text-3xl font-medium leading-relaxed text-foreground/90">
-                  Soy un desarrollador apasionado por la intersección entre el{" "}
-                  <span className="text-red-700 font-serif italic">diseño</span>{" "}
-                  y la{" "}
+                  {t.about?.intro?.line1 ||
+                    "Soy un desarrollador apasionado por la intersección entre el"}{" "}
                   <span className="text-red-700 font-serif italic">
-                    ingeniería
+                    {t.about?.intro?.design || "diseño"}
+                  </span>{" "}
+                  {t.about?.intro?.and || "y la"}{" "}
+                  <span className="text-red-700 font-serif italic">
+                    {t.about?.intro?.engineering || "ingeniería"}
                   </span>
-                  .
+                  {t.about?.intro?.line2 || "."}
                 </h2>
               </div>
 
@@ -101,15 +114,12 @@ export function About() {
                 style={{ animationDelay: "0.3s" }}
               >
                 <p>
-                  Con base en el mundo digital, creo experiencias web que no
-                  solo funcionan, sino que se sienten vivas. Mi enfoque combina
-                  la precisión técnica con una sensibilidad artística única.
+                  {t.about?.description?.p1 ||
+                    "Con base en el mundo digital, creo experiencias web que no solo funcionan, sino que se sienten vivas. Mi enfoque combina la precisión técnica con una sensibilidad artística única."}
                 </p>
                 <p>
-                  A diferencia de los desarrolladores tradicionales, no solo
-                  escribo código; esculpo interacciones. Me inspiro en el
-                  brutalismo minimalista y el movimiento cinético para crear
-                  interfaces que dejan huella.
+                  {t.about?.description?.p2 ||
+                    "A diferencia de los desarrolladores tradicionales, no solo escribo código; esculpo interacciones. Me inspiro en el brutalismo minimalista y el movimiento cinético para crear interfaces que dejan huella."}
                 </p>
               </div>
 
@@ -123,11 +133,11 @@ export function About() {
                   className="rounded-full group border-foreground/20 hover:border-red-700 transition-all duration-300"
                 >
                   <a
-                    href="/resume.pdf"
+                    href={t.about?.cv?.url || "/resume.pdf"}
                     target="_blank"
                     className="flex items-center gap-2"
                   >
-                    Descargar CV{" "}
+                    {t.about?.cv?.download || "Descargar CV"}{" "}
                     <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                   </a>
                 </Button>
@@ -145,10 +155,9 @@ export function About() {
 
                 {/* Contenedor de Imagen */}
                 <div className="relative h-full w-full overflow-hidden rounded-sm bg-muted z-10 grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out">
-                  {/* REEMPLAZA '/profile.jpg' con tu foto real en la carpeta public */}
                   <Image
                     src="/img/about.webp"
-                    alt="Mar Profile"
+                    alt={t.about?.image?.alt || "Mar Perfil"}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -198,18 +207,19 @@ export function About() {
               className="animate-on-scroll fade-in-left text-sm font-mono text-red-700 mb-6 uppercase tracking-widest"
               style={{ animationDelay: "0.1s" }}
             >
-              Mi Filosofía
+              {t.about?.philosophy?.label || "Mi Filosofía"}
             </h3>
             <p
               className="animate-on-scroll fade-in-up text-3xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground/80"
               style={{ animationDelay: "0.2s" }}
             >
-              El código es poesía lógica. <br className="hidden md:block" />
+              {t.about?.philosophy?.line1 || "El código es poesía lógica."}{" "}
+              <br className="hidden md:block" />
               <span className="text-muted-foreground/40">
-                Creo sistemas complejos
+                {t.about?.philosophy?.line2 || "Creo sistemas complejos"}
               </span>{" "}
               <br className="hidden md:block" />
-              que se sienten simples.
+              {t.about?.philosophy?.line3 || "que se sienten simples."}
             </p>
           </div>
         </section>
@@ -221,14 +231,16 @@ export function About() {
             style={{ animationDelay: "0.2s" }}
           >
             <h2 className="font-serif text-4xl md:text-5xl mb-8">
-              ¿Listo para crear algo increíble?
+              {t.about?.cta?.question || "¿Listo para crear algo increíble?"}
             </h2>
             <Button
               size="lg"
               asChild
               className="rounded-full bg-foreground text-background hover:bg-red-700 hover:text-white transition-all duration-300 px-8 py-6 text-lg"
             >
-              <Link href="/contact">Iniciar Proyecto</Link>
+              <Link href="/contact">
+                {t.about?.cta?.button || "Iniciar Proyecto"}
+              </Link>
             </Button>
           </div>
         </section>
