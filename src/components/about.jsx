@@ -133,11 +133,12 @@ export function About() {
                   className="rounded-full group border-foreground/20 hover:border-red-700 transition-all duration-300"
                 >
                   <a
-                    href={t.about?.cv?.url || "/resume.pdf"}
-                    target="_blank"
+                    href="/portfolio-mar.pdf" // La ruta relativa a la carpeta public
+                    target="_blank" // Abre en pestaña nueva
+                    rel="noopener noreferrer" // Seguridad adicional
                     className="flex items-center gap-2"
                   >
-                    {t.about?.cv?.download || "Descargar CV"}{" "}
+                    {t.about?.cv?.download || "Ver Portafolio"}
                     <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                   </a>
                 </Button>
