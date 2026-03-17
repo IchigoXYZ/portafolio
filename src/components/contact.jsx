@@ -219,7 +219,7 @@ export function Contact() {
                     name="name"
                     value={formState.name}
                     onChange={handleChange}
-                    placeholder="John Doe"
+                    placeholder="Mar Anthony Morales"
                     className="w-full bg-transparent border-b border-border py-4 text-lg outline-none transition-all placeholder:text-muted-foreground/30 focus:border-red-700 focus:placeholder:text-transparent"
                   />
                 </div>
@@ -239,7 +239,7 @@ export function Contact() {
                     name="email"
                     value={formState.email}
                     onChange={handleChange}
-                    placeholder="john@example.com"
+                    placeholder="maranthony.work@gmail.com"
                     className="w-full bg-transparent border-b border-border py-4 text-lg outline-none transition-all placeholder:text-muted-foreground/30 focus:border-red-700 focus:placeholder:text-transparent"
                   />
                 </div>
@@ -269,7 +269,7 @@ export function Contact() {
                 <Button
                   type="submit"
                   disabled={isSubmitting || isSuccess}
-                  className="w-full h-14 text-lg rounded-full bg-foreground text-background hover:bg-red-800 hover:text-white transition-all duration-300 group relative overflow-hidden"
+                  className="w-full h-14 text-lg rounded-full bg-foreground text-background hover:text-white transition-all duration-700 group relative overflow-hidden"
                 >
                   <span className="relative z-10 flex items-center justify-center gap-2">
                     {isSubmitting ? (
@@ -286,7 +286,7 @@ export function Contact() {
                     )}
                   </span>
                   {/* Efecto de llenado al hover */}
-                  <span className="absolute inset-0 bg-red-800 transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300 z-0"></span>
+                  <span className="absolute inset-0 bg-red-800 transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 z-0"></span>
                 </Button>
               </div>
             </form>

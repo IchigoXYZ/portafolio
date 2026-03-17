@@ -199,7 +199,7 @@ export function Hero() {
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <Link href="#about">
+        <Link href="/about">
           <ArrowDown className="h-6 w-6 text-muted-foreground" />
         </Link>
       </div>

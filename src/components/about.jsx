@@ -37,7 +37,7 @@ export function About() {
     {
       icon: <Code2 className="w-6 h-6" />,
       title: "Full Stack Dev",
-      desc: "Arquitectura escalable desde el frontend hasta el backend usando Next.js y Node.",
+      desc: "Arquitectura escalable desde el frontend hasta el backend usando Next.js y Django.",
     },
     {
       icon: <Palette className="w-6 h-6" />,
@@ -137,7 +137,7 @@ export function About() {
             {/* Columna de Imagen (Efecto Hover Interactivo) */}
             <div className="lg:col-span-5 relative mt-8 lg:mt-0">
               <div
-                className="animate-on-scroll scale-in relative aspect-[3/4] w-full max-w-md mx-auto group"
+                className="animate-on-scroll scale-in relative aspect-3/4 w-full max-w-md mx-auto group"
                 style={{ animationDelay: "0.3s" }}
               >
                 {/* Marco decorativo */}
@@ -192,7 +192,7 @@ export function About() {
 
         {/* --- SECCIÓN 3: FILOSOFÍA (Texto Grande estilo p5aholic) --- */}
         <section className="py-20 relative">
-          <div className="absolute left-0 top-0 w-1 h-full bg-gradient-to-b from-transparent via-red-700 to-transparent opacity-20"></div>
+          <div className="absolute left-0 top-0 w-1 h-full bg-linear-to-b from-transparent via-red-700 to-transparent opacity-20"></div>
           <div className="pl-8 md:pl-16">
             <h3
               className="animate-on-scroll fade-in-left text-sm font-mono text-red-700 mb-6 uppercase tracking-widest"

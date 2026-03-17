@@ -3,6 +3,7 @@ import { ThemeProvider } from "@/contexts/theme-context";
 import { LanguageProvider } from "@/contexts/language-context";
 import { Navigation } from "@/components/navigation";
 import TransitionProvider from "@/components/provider/TransitionProvider";
+import CursorTrail from "@/components/CursorTrail";
 
 export const metadata = {
   title: "Mar Portfolio - Desarrollador Full Stack",
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
         <ThemeProvider>
           <LanguageProvider>
             <TransitionProvider>
+              <CursorTrail />
               <Navigation />
               {children}
             </TransitionProvider>
