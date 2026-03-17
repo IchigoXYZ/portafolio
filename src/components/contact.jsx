@@ -12,9 +12,11 @@ import {
   Clock,
 } from "lucide-react";
 import InteractiveParticles from "@/components/InteractiveParticles";
+import { useLanguage } from "@/contexts/language-context";
 
 export function Contact() {
   const containerRef = useRef(null);
+  const { t } = useLanguage();
   const [copied, setCopied] = useState(false);
   const [formState, setFormState] = useState({
     name: "",
@@ -82,7 +84,7 @@ export function Contact() {
       );
     };
     updateTime();
-    const interval = setInterval(updateTime, 60000); // Actualizar cada minuto
+    const interval = setInterval(updateTime, 60000);
     return () => clearInterval(interval);
   }, []);
 
@@ -105,13 +107,15 @@ export function Contact() {
               style={{ animationDelay: "0.1s" }}
             >
               <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6 text-balance">
-                Lets start a <br />
-                <span className="text-red-800 italic">Project</span> together.
+                {t.contact?.title?.line1 || "Lets start a"} <br />
+                <span className="text-red-800 italic">
+                  {t.contact?.title?.line2 || "Project"}
+                </span>{" "}
+                {t.contact?.title?.line3 || "together."}
               </h1>
               <p className="text-lg text-muted-foreground max-w-md leading-relaxed">
-                ¿Tienes una idea innovadora? ¿Buscas transformar tu presencia
-                digital? Estoy disponible para trabajos freelance y
-                colaboraciones.
+                {t.contact?.description ||
+                  "¿Tienes una idea innovadora? ¿Buscas transformar tu presencia digital? Estoy disponible para trabajos freelance y colaboraciones."}
               </p>
             </div>
 
@@ -123,10 +127,12 @@ export function Contact() {
               {/* Detalles Rápidos */}
               <div className="flex gap-6 text-sm font-medium text-muted-foreground/80">
                 <div className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4" /> Remote / Worldwide
+                  <MapPin className="w-4 h-4" />{" "}
+                  {t.contact?.location || "Remote / Worldwide"}
                 </div>
                 <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4" /> Local time: {time}
+                  <Clock className="w-4 h-4" />{" "}
+                  {t.contact?.localTime || "Local time"}: {time}
                 </div>
               </div>
 
@@ -137,7 +143,7 @@ export function Contact() {
                   <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
                 </span>
                 <span className="text-sm font-medium text-foreground">
-                  Available for new projects
+                  {t.contact?.availability || "Available for new projects"}
                 </span>
               </div>
             </div>
@@ -152,7 +158,7 @@ export function Contact() {
                 className="group cursor-pointer relative overflow-hidden rounded-2xl border border-border bg-card p-6 md:p-8 transition-all hover:border-red-800/50 hover:shadow-[0_0_30px_rgba(153,27,27,0.1)]"
               >
                 <p className="mb-2 text-sm font-medium text-muted-foreground uppercase tracking-widest">
-                  Email Contact
+                  {t.contact?.emailLabel || "Email Contact"}
                 </p>
                 <div className="flex items-center justify-between gap-4">
                   <h2 className="text-xl md:text-3xl font-bold truncate text-foreground group-hover:text-red-700 transition-colors">
@@ -172,7 +178,7 @@ export function Contact() {
                     copied ? "translate-y-0" : "translate-y-full"
                   }`}
                 >
-                  ¡Copiado al portapapeles!
+                  {t.contact?.copyFeedback || "¡Copiado al portapapeles!"}
                 </div>
               </div>
             </div>
@@ -210,7 +216,7 @@ export function Contact() {
                     htmlFor="name"
                     className="text-sm font-medium text-muted-foreground group-focus-within:text-red-700 transition-colors"
                   >
-                    Tu Nombre
+                    {t.contact?.form?.nameLabel || "Tu Nombre"}
                   </label>
                   <input
                     required
@@ -219,7 +225,9 @@ export function Contact() {
                     name="name"
                     value={formState.name}
                     onChange={handleChange}
-                    placeholder="Mar Anthony Morales"
+                    placeholder={
+                      t.contact?.form?.namePlaceholder || "Mar Anthony Morales"
+                    }
                     className="w-full bg-transparent border-b border-border py-4 text-lg outline-none transition-all placeholder:text-muted-foreground/30 focus:border-red-700 focus:placeholder:text-transparent"
                   />
                 </div>
@@ -230,7 +238,7 @@ export function Contact() {
                     htmlFor="email"
                     className="text-sm font-medium text-muted-foreground group-focus-within:text-red-700 transition-colors"
                   >
-                    Tu Email
+                    {t.contact?.form?.emailLabel || "Tu Email"}
                   </label>
                   <input
                     required
@@ -239,7 +247,10 @@ export function Contact() {
                     name="email"
                     value={formState.email}
                     onChange={handleChange}
-                    placeholder="maranthony.work@gmail.com"
+                    placeholder={
+                      t.contact?.form?.emailPlaceholder ||
+                      "maranthony.work@gmail.com"
+                    }
                     className="w-full bg-transparent border-b border-border py-4 text-lg outline-none transition-all placeholder:text-muted-foreground/30 focus:border-red-700 focus:placeholder:text-transparent"
                   />
                 </div>
@@ -250,7 +261,8 @@ export function Contact() {
                     htmlFor="message"
                     className="text-sm font-medium text-muted-foreground group-focus-within:text-red-700 transition-colors"
                   >
-                    Cuéntame sobre tu proyecto
+                    {t.contact?.form?.messageLabel ||
+                      "Cuéntame sobre tu proyecto"}
                   </label>
                   <textarea
                     required
@@ -259,7 +271,10 @@ export function Contact() {
                     rows={4}
                     value={formState.message}
                     onChange={handleChange}
-                    placeholder="Estoy buscando crear..."
+                    placeholder={
+                      t.contact?.form?.messagePlaceholder ||
+                      "Estoy buscando crear..."
+                    }
                     className="w-full bg-transparent border-b border-border py-4 text-lg outline-none resize-none transition-all placeholder:text-muted-foreground/30 focus:border-red-700 focus:placeholder:text-transparent"
                   />
                 </div>
@@ -273,14 +288,15 @@ export function Contact() {
                 >
                   <span className="relative z-10 flex items-center justify-center gap-2">
                     {isSubmitting ? (
-                      "Enviando..."
+                      t.contact?.form?.sending || "Enviando..."
                     ) : isSuccess ? (
                       <>
-                        Mensaje Enviado <Check className="w-5 h-5" />
+                        {t.contact?.form?.success || "Mensaje Enviado"}{" "}
+                        <Check className="w-5 h-5" />
                       </>
                     ) : (
                       <>
-                        Enviar Mensaje{" "}
+                        {t.contact?.form?.submit || "Enviar Mensaje"}{" "}
                         <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                       </>
                     )}
