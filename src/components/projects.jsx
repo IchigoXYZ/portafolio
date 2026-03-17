@@ -55,24 +55,9 @@ const ALL_PROJECTS = [
   },
 ];
 
-const CATEGORIES = ["Todos", "Full Stack", "Design", "Dashboard"];
-
 export function Projects() {
-  const [activeCategory, setActiveCategory] = useState("Todos");
   const [filteredProjects, setFilteredProjects] = useState(ALL_PROJECTS);
   const containerRef = useRef(null);
-
-  // Filtrado de proyectos con animación de salida/entrada simple
-  useEffect(() => {
-    const filtered =
-      activeCategory === "Todos"
-        ? ALL_PROJECTS
-        : ALL_PROJECTS.filter((p) => p.category === activeCategory);
-    setFilteredProjects(filtered);
-
-    // Re-trigger observer para nuevos elementos
-    setTimeout(() => handleScrollAnimation(), 100);
-  }, [activeCategory]);
 
   // Lógica de Observer (Igual que en About y Hero)
   const handleScrollAnimation = () => {
@@ -126,29 +111,6 @@ export function Projects() {
               la creatividad.
             </p>
           </div>
-        </div>
-
-        {/* FILTER TABS */}
-        <div
-          className="animate-on-scroll fade-in-up mb-12 flex flex-wrap gap-4"
-          style={{ animationDelay: "0.3s" }}
-        >
-          {CATEGORIES.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className={`
-                px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 border
-                ${
-                  activeCategory === cat
-                    ? "bg-red-800 text-white border-red-800 shadow-[0_0_15px_rgba(153,27,27,0.5)]"
-                    : "bg-transparent text-muted-foreground border-border hover:border-foreground/50 hover:text-foreground"
-                }
-              `}
-            >
-              {cat}
-            </button>
-          ))}
         </div>
 
         {/* PROJECTS GRID */}
@@ -223,15 +185,6 @@ export function Projects() {
             </div>
           ))}
         </div>
-
-        {/* MENSAJE SI NO HAY PROYECTOS */}
-        {filteredProjects.length === 0 && (
-          <div className="py-20 text-center animate-on-scroll fade-in-up">
-            <p className="text-muted-foreground text-lg">
-              No hay proyectos en esta categoría aún.
-            </p>
-          </div>
-        )}
 
         {/* CTA BOTTOM */}
         <div className="mt-32 border-t border-border pt-16 flex flex-col items-center text-center">
