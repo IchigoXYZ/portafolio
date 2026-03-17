@@ -34,7 +34,7 @@ export function Navigation() {
     { label: t.nav.home, href: "/" },
     { label: t.nav.about, href: "/about" },
     { label: t.nav.projects, href: "/projects" },
-    { label: t.nav.experiments || "Experiments", href: "/experiments" }, // Fallback si no está en t
+    // { label: t.nav.experiments || "Experiments", href: "/experiments" }, // Fallback si no está en t
     { label: t.nav.contact, href: "/contact" },
   ];
 

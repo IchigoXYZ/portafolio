@@ -148,7 +148,7 @@ export function About() {
             {/* Columna de Imagen (Efecto Hover Interactivo) */}
             <div className="lg:col-span-5 relative mt-8 lg:mt-0">
               <div
-                className="animate-on-scroll scale-in relative aspect-3/4 w-full max-w-md mx-auto group"
+                className="animate-on-scroll scale-in relative aspect-square w-full max-w-md mx-auto group"
                 style={{ animationDelay: "0.3s" }}
               >
                 {/* Marco decorativo */}
@@ -157,7 +157,7 @@ export function About() {
                 {/* Contenedor de Imagen */}
                 <div className="relative h-full w-full overflow-hidden rounded-sm bg-muted z-10 grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out">
                   <Image
-                    src="/img/about.webp"
+                    src="/img/about.jpg"
                     alt={t.about?.image?.alt || "Mar Perfil"}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"

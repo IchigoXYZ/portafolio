@@ -33,17 +33,6 @@ const ALL_PROJECTS = [
     featured: true,
   },
   {
-    id: 3,
-    title: "Cursos de Negocios Plus",
-    category: "Full Stack",
-    description:
-      "Plataforma de venta de cursos con sistema de membresía plus, registro de usuarios y compras en línea.",
-    image: "/img/cursos-negocios.webp",
-    tech: ["Next.js", "TypeScript", "Stripe", "Prisma", "PostgreSQL"],
-    demo: "https://cursosnegociosplus.com",
-    featured: false,
-  },
-  {
     id: 4,
     title: "Catálogo Audiovisual",
     category: "Full Stack",
@@ -95,7 +84,7 @@ export function Projects() {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* HEADER */}
-        <div className="mb-16 md:mb-24">
+        <div className="mb-10">
           <div
             className="animate-on-scroll fade-in-up"
             style={{ animationDelay: "0.1s" }}
@@ -127,7 +116,7 @@ export function Projects() {
               style={{ animationDelay: `${0.1 + (index % 2) * 0.1}s` }}
             >
               {/* CARD IMAGE CONTAINER */}
-              <div className="relative aspect-16/10 w-full overflow-hidden rounded-lg bg-muted border border-border/50 shadow-lg">
+              <div className="relative aspect-2/1 w-full overflow-hidden rounded-lg bg-muted border border-border/50 shadow-lg">
                 {/* Overlay gradiente al hacer hover */}
                 <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent opacity-60 transition-opacity duration-300 z-10" />
 
