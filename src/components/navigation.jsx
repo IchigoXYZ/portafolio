@@ -12,14 +12,14 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import Link from "next/link";
-import { usePathname } from "next/navigation"; // Para detectar la página actual
+import { usePathname } from "next/navigation";
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
   const { language, setLanguage, t } = useLanguage();
-  const pathname = usePathname(); // Obtenemos la ruta actual
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,7 +29,7 @@ export function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Items de menú integrando 'Experiments' en el objeto de traducción
+  // Items de menú con soporte para portugués
   const menuItems = [
     { label: t.nav.home, href: "/" },
     { label: t.nav.about, href: "/about" },
@@ -37,6 +37,20 @@ export function Navigation() {
     { label: t.nav.experiments || "Experiments", href: "/experiments" }, // Fallback si no está en t
     { label: t.nav.contact, href: "/contact" },
   ];
+
+  // Función para obtener la bandera según el idioma (opcional)
+  const getLanguageFlag = (lang) => {
+    switch (lang) {
+      case "es":
+        return "🇪🇸";
+      case "en":
+        return "🇬🇧";
+      case "pt":
+        return "🇧🇷";
+      default:
+        return "";
+    }
+  };
 
   return (
     <nav
@@ -121,13 +135,19 @@ export function Navigation() {
                     onClick={() => setLanguage("es")}
                     className="text-xs font-mono"
                   >
-                    ESPAÑOL
+                    <span className="mr-2">🇪🇸</span> ESPAÑOL
                   </DropdownMenuItem>
                   <DropdownMenuItem
                     onClick={() => setLanguage("en")}
                     className="text-xs font-mono"
                   >
-                    ENGLISH
+                    <span className="mr-2">🇬🇧</span> ENGLISH
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={() => setLanguage("pt")}
+                    className="text-xs font-mono"
+                  >
+                    <span className="mr-2">🇧🇷</span> PORTUGUÊS
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
@@ -176,21 +196,46 @@ export function Navigation() {
                 </Link>
               ))}
 
-              <div className="mt-10 pt-10 border-t border-white/5 flex gap-4">
-                <Button
-                  variant="outline"
-                  className="flex-1 rounded-full font-mono text-xs"
-                  onClick={() => setLanguage("es")}
-                >
-                  ES
-                </Button>
-                <Button
-                  variant="outline"
-                  className="flex-1 rounded-full font-mono text-xs"
-                  onClick={() => setLanguage("en")}
-                >
-                  EN
-                </Button>
+              <div className="mt-10 pt-10 border-t border-white/5 flex flex-col gap-4">
+                <div className="flex gap-4">
+                  <Button
+                    variant={language === "es" ? "default" : "outline"}
+                    className="flex-1 rounded-full font-mono text-xs"
+                    onClick={() => {
+                      setLanguage("es");
+                      setIsMenuOpen(false);
+                    }}
+                  >
+                    <span className="mr-2">🇪🇸</span> ES
+                  </Button>
+                  <Button
+                    variant={language === "en" ? "default" : "outline"}
+                    className="flex-1 rounded-full font-mono text-xs"
+                    onClick={() => {
+                      setLanguage("en");
+                      setIsMenuOpen(false);
+                    }}
+                  >
+                    <span className="mr-2">🇬🇧</span> EN
+                  </Button>
+                  <Button
+                    variant={language === "pt" ? "default" : "outline"}
+                    className="flex-1 rounded-full font-mono text-xs"
+                    onClick={() => {
+                      setLanguage("pt");
+                      setIsMenuOpen(false);
+                    }}
+                  >
+                    <span className="mr-2">🇧🇷</span> PT
+                  </Button>
+                </div>
+
+                {/* Indicador de idioma actual */}
+                <div className="text-center text-xs text-muted-foreground font-mono mt-2">
+                  {language === "es" && "Español"}
+                  {language === "en" && "English"}
+                  {language === "pt" && "Português (Brasil)"}
+                </div>
               </div>
             </div>
           </div>
