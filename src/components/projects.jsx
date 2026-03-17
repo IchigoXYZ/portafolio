@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Github, ExternalLink, ArrowRight } from "lucide-react";
+import { ExternalLink, ArrowRight } from "lucide-react";
 import InteractiveParticles from "@/components/InteractiveParticles";
 
 // Datos actualizados con los proyectos reales
@@ -17,7 +17,6 @@ const ALL_PROJECTS = [
       "Plataforma de comercio con diseño experimental y arquitectura headless usando Django y Next.js.",
     image: "/img/e-comerce.webp",
     tech: ["Next.js", "Django", "Tailwind", "Zustand", "Stripe"],
-    github: "https://github.com",
     demo: "https://andayvemarket.com",
     featured: true,
   },
@@ -27,9 +26,8 @@ const ALL_PROJECTS = [
     category: "Full Stack",
     description:
       "Sitio web para reservas de taxis y excursiones en Cuba con sistema de preferencias personalizadas.",
-    image: "/img/taxi-solers.webp", // Asegúrate de tener esta imagen en public/img/
+    image: "/img/taxi-solers.webp",
     tech: ["React", "Node.js", "MongoDB", "Express", "Tailwind"],
-    github: "https://github.com",
     demo: "https://taxis-solers.com",
     featured: true,
   },
@@ -39,9 +37,8 @@ const ALL_PROJECTS = [
     category: "Full Stack",
     description:
       "Plataforma de venta de cursos con sistema de membresía plus, registro de usuarios y compras en línea.",
-    image: "/img/cursos-negocios.webp", // Asegúrate de tener esta imagen en public/img/
+    image: "/img/cursos-negocios.webp",
     tech: ["Next.js", "TypeScript", "Stripe", "Prisma", "PostgreSQL"],
-    github: "https://github.com",
     demo: "https://cursosnegociosplus.com",
     featured: false,
   },
@@ -51,10 +48,9 @@ const ALL_PROJECTS = [
     category: "Full Stack",
     description:
       "Catálogo web de series y películas estilo Netflix para empresa que vende contenido audiovisual físico.",
-    image: "/img/catalogo-audiovisual.webp", // Asegúrate de tener esta imagen en public/img/
-    tech: ["React", "Firebase", "TMDB API", "Material-UI", "Redux"],
-    github: "https://github.com",
-    demo: "https://catalogoaudiovisual.com",
+    image: "/img/elmar.webp",
+    tech: ["React", "Next.js", "TMDB API", "Material-UI", "Redux"],
+    demo: "https://elmar-psi.vercel.app/",
     featured: false,
   },
 ];
@@ -186,14 +182,6 @@ export function Projects() {
 
                 {/* Botones flotantes (aparecen en hover en desktop, siempre visibles en mobile) */}
                 <div className="absolute bottom-6 right-6 z-20 flex gap-3 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 ease-out">
-                  <Link
-                    href={project.github}
-                    target="_blank"
-                    className="p-3 bg-background/90 backdrop-blur-sm rounded-full text-foreground hover:bg-red-700 hover:text-white transition-colors border border-border"
-                    title="Ver Código"
-                  >
-                    <Github className="w-5 h-5" />
-                  </Link>
                   <Link
                     href={project.demo}
                     target="_blank"
