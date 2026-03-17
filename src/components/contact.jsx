@@ -28,6 +28,8 @@ export function Contact() {
 
   // Email real (cámbialo por el tuyo)
   const MY_EMAIL = "maranthony.work@gmail.com";
+  const BOT_TOKEN = process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN;
+  const CHAT_ID = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID;
 
   // Lógica de Observer para animaciones
   useEffect(() => {
@@ -54,20 +56,51 @@ export function Contact() {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  // Simulación de envío de formulario
+  // Envío de formulario a Telegram
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simular delay de red
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    const { name, email, message } = formState;
 
-    setIsSubmitting(false);
-    setIsSuccess(true);
-    setFormState({ name: "", email: "", message: "" });
+    const textoTelegram = `
+🎮 *Nuevo mensaje de Contacto - Portafolio* 🎮
+---------------------------
+👤 *Nombre:* ${name}
+📧 *Email:* ${email}
+💬 *Mensaje:* ${message}
+---------------------------
+    `;
 
-    // Resetear mensaje de éxito después de 5 seg
-    setTimeout(() => setIsSuccess(false), 5000);
+    try {
+      const response = await fetch(
+        `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            chat_id: CHAT_ID,
+            text: textoTelegram,
+            parse_mode: "Markdown",
+          }),
+        }
+      );
+
+      if (response.ok) {
+        setIsSuccess(true);
+        setFormState({ name: "", email: "", message: "" });
+        setTimeout(() => setIsSuccess(false), 5000);
+      } else {
+        alert(
+          "Hubo un error al enviar el mensaje. Verifica la configuración del bot."
+        );
+      }
+    } catch (error) {
+      console.error("Error enviando a Telegram:", error);
+      alert("Error de conexión. Revisa tu internet.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e) => {
