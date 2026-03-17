@@ -84,37 +84,6 @@ export const translations = {
         button: "Contáctame ahora",
       },
     },
-    skills: {
-      title: "Habilidades Técnicas",
-      frontend: "Frontend",
-      backend: "Backend",
-      tools: "Herramientas",
-    },
-    experience: {
-      title: "Experiencia",
-      present: "Presente",
-      job1: {
-        title: "Senior Full Stack Developer",
-        company: "Tech Company Inc.",
-        period: "2021 - Presente",
-        description:
-          "Liderando el desarrollo de aplicaciones web escalables con Next.js y Node.js. Implementación de arquitecturas serverless y optimización de rendimiento.",
-      },
-      job2: {
-        title: "Full Stack Developer",
-        company: "Startup Digital",
-        period: "2019 - 2021",
-        description:
-          "Desarrollo de productos desde cero utilizando React y Node.js. Colaboración en equipos ágiles y mentoría de desarrolladores junior.",
-      },
-      job3: {
-        title: "Frontend Developer",
-        company: "Creative Agency",
-        period: "2017 - 2019",
-        description:
-          "Creación de interfaces de usuario atractivas y responsive. Trabajo con diseñadores para implementar experiencias visuales excepcionales.",
-      },
-    },
     contact: {
       title: {
         line1: "Empecemos un",
@@ -249,6 +218,117 @@ export const translations = {
         sending: "Sending...",
         success: "Message Sent",
         submit: "Send Message",
+      },
+    },
+  },
+  pt: {
+    nav: {
+      home: "Início",
+      about: "Sobre Mim",
+      projects: "Projetos",
+      skills: "Habilidades",
+      experience: "Experiência",
+      contact: "Contato",
+    },
+    hero: {
+      greeting: "Olá, eu sou",
+      name: "Mar Anthony",
+      title: "Desenvolvedor Full Stack & Designer Criativo",
+      description:
+        "Especializado em criar experiências digitais excepcionais. Combinando código elegante com design inovador para construir produtos que fazem a diferença.",
+      cta: "Ver Projetos",
+      contact: "Fale Comigo",
+    },
+    about: {
+      title: {
+        prefix: "Sobre",
+        suffix: "Mim.",
+      },
+      intro: {
+        line1: "Sou um desenvolvedor apaixonado pela interseção entre",
+        design: "design",
+        and: "e",
+        engineering: "engenharia",
+        line2: ".",
+      },
+      description: {
+        p1: "Baseado no mundo digital, crio experiências web que não só funcionam, mas parecem vivas. Minha abordagem combina precisão técnica com uma sensibilidade artística única.",
+        p2: "Diferente dos desenvolvedores tradicionais, eu não apenas escrevo código; eu esculpo interações. Busco inspiração no brutalismo minimalista e no movimento cinético para criar interfaces que marcam.",
+      },
+      cv: {
+        download: "Baixar CV",
+        url: "/resume.pdf",
+      },
+      image: {
+        alt: "Perfil Mar",
+      },
+      services: {
+        fullstack: {
+          title: "Full Stack Dev",
+          desc: "Arquitetura escalável do frontend ao backend usando Next.js e Django.",
+        },
+        uiux: {
+          title: "UI/UX Design",
+          desc: "Interfaces imersivas que priorizam a experiência do usuário e a estética.",
+        },
+        devops: {
+          title: "DevOps & Cloud",
+          desc: "Pipelines de CI/CD, deploys na AWS/Vercel e otimização de performance.",
+        },
+        creative: {
+          title: "Creative Coding",
+          desc: "Animações WebGL e experiências interativas que quebram o convencional.",
+        },
+      },
+      philosophy: {
+        label: "Minha Filosofia",
+        line1: "Código é poesia lógica.",
+        line2: "Crio sistemas complexos",
+        line3: "que parecem simples.",
+      },
+      cta: {
+        question: "Pronto para criar algo incrível?",
+        button: "Iniciar Projeto",
+      },
+    },
+    projects: {
+      title: {
+        prefix: "Selected",
+        suffix: "Works",
+      },
+      subtitle:
+        "Uma coleção selecionada de projetos onde a lógica encontra a criatividade.",
+      buttons: {
+        viewDemo: "Ver Demonstração",
+      },
+      cta: {
+        question: "Tem um projeto em mente?",
+        button: "Fale comigo agora",
+      },
+    },
+    contact: {
+      title: {
+        line1: "Vamos começar um",
+        line2: "Projeto",
+        line3: "juntos.",
+      },
+      description:
+        "Tem uma ideia inovadora? Quer transformar sua presença digital? Estou disponível para trabalhos freelancer e colaborações.",
+      location: "Remoto / Mundial",
+      localTime: "Horário local",
+      availability: "Disponível para novos projetos",
+      emailLabel: "Email de Contato",
+      copyFeedback: "Copiado para a área de transferência!",
+      form: {
+        nameLabel: "Seu Nome",
+        namePlaceholder: "Mar Anthony Morales",
+        emailLabel: "Seu Email",
+        emailPlaceholder: "maranthony.work@gmail.com",
+        messageLabel: "Fale sobre seu projeto",
+        messagePlaceholder: "Estou procurando criar...",
+        sending: "Enviando...",
+        success: "Mensagem Enviada",
+        submit: "Enviar Mensagem",
       },
     },
   },
