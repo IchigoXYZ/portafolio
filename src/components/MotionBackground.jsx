@@ -1,14 +1,24 @@
+"use client";
+
 import React from "react";
+import { useTheme } from "@/contexts/theme-context";
 
 const MotionBackground = () => {
-  // Estilos en línea
+  const { theme } = useTheme();
+
+  // Determinamos si es oscuro para ajustar la visibilidad del texto
+  const isDark = theme === "dark";
+
   const styles = {
     container: {
       position: "absolute",
       height: "100vh",
-      backgroundColor: "#0b0b0b",
+      backgroundColor: "transparent",
       overflow: "hidden",
       inset: 0,
+      zIndex: 0,
+      // Transición suave para cualquier cambio de color de fondo si existiera
+      transition: "background-color 500ms ease-in-out",
     },
     backgroundRow: {
       position: "absolute",
@@ -19,27 +29,31 @@ const MotionBackground = () => {
       whiteSpace: "nowrap",
     },
     topRow: {
-      top: 0,
+      top: "5%",
     },
     bottomRow: {
-      bottom: 0,
+      bottom: "5%",
     },
     textContainer: {
       display: "flex",
-      animation: "scrollLeft 200s linear infinite",
+      animation: "scrollLeft 160s linear infinite",
     },
     textContainerReverse: {
       display: "flex",
-      animation: "scrollRight 200s linear infinite",
+      animation: "scrollRight 160s linear infinite",
     },
     text: {
-      fontSize: "120px",
-      fontWeight: 800,
-      color: "rgba(255, 255, 255, 0.06)",
+      fontSize: "clamp(80px, 10vw, 120px)",
+      fontWeight: 900,
+      // Color dinámico según el modo
+      color: isDark ? "rgba(255, 255, 255, 0.03)" : "rgba(0, 0, 0, 0.04)",
       marginRight: "80px",
       textTransform: "uppercase",
       letterSpacing: "4px",
       flexShrink: 0,
+      fontFamily: "serif",
+      // ESTA ES LA CLAVE: Transición para el cambio de color de las letras
+      transition: "color 500ms ease-in-out",
     },
     keyframes: `
       @keyframes scrollLeft {
@@ -53,11 +67,11 @@ const MotionBackground = () => {
     `,
   };
 
-  // Crear elementos de texto repetido
   const createTextElements = () => {
-    const texts = Array.from({ length: 6 }, (_, i) => (
+    const content = "FULL STACK UI/UX Designer DevOps ";
+    const texts = Array.from({ length: 8 }, (_, i) => (
       <div key={`text-${i}`} style={styles.text}>
-        FULL STACK UI/UX Designer DevOps
+        {content}
       </div>
     ));
 
@@ -70,16 +84,19 @@ const MotionBackground = () => {
   };
 
   return (
-    <div style={styles.container}>
-      {/* Inyectar keyframes en el head mediante style tag */}
+    // Agregamos transition-colors y duration-500 por si usas clases de Tailwind en el futuro
+    <div
+      style={styles.container}
+      className="transition-all duration-500 ease-in-out"
+    >
       <style>{styles.keyframes}</style>
 
-      {/* Fila superior - se mueve hacia la izquierda */}
+      {/* Fila superior - Movimiento a la izquierda */}
       <div style={{ ...styles.backgroundRow, ...styles.topRow }}>
         <div style={styles.textContainer}>{createTextElements()}</div>
       </div>
 
-      {/* Fila inferior - se mueve hacia la derecha */}
+      {/* Fila inferior - Movimiento a la derecha */}
       <div style={{ ...styles.backgroundRow, ...styles.bottomRow }}>
         <div style={styles.textContainerReverse}>{createTextElements()}</div>
       </div>
