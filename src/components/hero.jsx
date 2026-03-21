@@ -108,7 +108,7 @@ export function Hero() {
           {/* SOCIAL LINKS */}
           <div className="animate-on-scroll fade-in-up mt-16 flex items-center justify-center gap-4 sm:gap-8">
             <SocialIcon
-              href="https://github.com"
+              href="https://github.com/IchigoXYZ"
               icon={<Github className="h-6 w-6" />}
               label="GitHub"
               hoverBg="bg-slate-200 dark:bg-slate-800"
