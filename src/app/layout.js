@@ -4,6 +4,7 @@ import { LanguageProvider } from "@/contexts/language-context";
 import { Navigation } from "@/components/navigation";
 import TransitionProvider from "@/components/provider/TransitionProvider";
 import CursorTrail from "@/components/CursorTrail";
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata = {
   title: "Mar Portfolio - Desarrollador Full Stack",
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
             </TransitionProvider>
           </LanguageProvider>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
