@@ -33,6 +33,17 @@ const ALL_PROJECTS = [
     featured: true,
   },
   {
+    id: 3,
+    title: "Catálogo Alamano",
+    category: "Full Stack",
+    description:
+      "Catálogo especializado para la venta de productos de Amazon con gestión optimizada de artículos y búsqueda avanzada.",
+    image: "/img/alamano.webp",
+    tech: ["Next.js", "Tailwind", "Amazon API", "Zustand", "Lucide"],
+    demo: "https://catalogo.alamano-services.com/",
+    featured: true,
+  },
+  {
     id: 4,
     title: "Catálogo Audiovisual",
     category: "Full Stack",
