@@ -7,7 +7,7 @@ import CursorTrail from "@/components/CursorTrail";
 import { Analytics } from "@vercel/analytics/next"
 
 export const metadata = {
-  title: "Mar Portfolio - Desarrollador Full Stack",
+  title: "Mar | Portafolio",
   description:
     "Portfolio profesional de desarrollador con experiencia en tecnologías modernas",
 };
